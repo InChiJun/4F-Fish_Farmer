@@ -1,2 +1,2 @@
-# traffic_solution
+# FLUID
 교통신호 프로젝트입니다.

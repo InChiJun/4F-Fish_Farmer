@@ -4,7 +4,7 @@
 
 char ssid[] = "IOTA_24G";
 char pass[] = "kosta90009";
-char broker[] = "10.10.10.19";    // 라즈베리파이 주소
+char broker[] = "10.10.10.19";    // 열려 있는 포트의 IP 주소를 입력해야 함
 int port = 1883; // admin에서 설정한 port
 
 char p_topic[] = "sensor/image"; // 주제 설정

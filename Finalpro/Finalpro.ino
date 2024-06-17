@@ -1,3 +1,4 @@
+
 #include <Arduino.h>
 #include "AHT20.h"
 AHT20 aht20;
@@ -8,8 +9,12 @@ void setup() {
 
 
 void loop() {
-    //float temp = aht20.
+    Serial.print("Humidity: ");
+    float humid = aht20.getHumidity();
+    Serial.println(humid);
     Serial.print("Temperature: ");
-    //Serial.println(temp);
+    float temp = aht20.getTemp();
+    Serial.println(temp);
+
     delay(2000);
 }

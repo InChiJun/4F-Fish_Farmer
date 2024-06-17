@@ -8,8 +8,6 @@ AHT20::AHT20()
     this->cold_temp = 0.0f;
     this->hot_humidity = 0.0f;
     this->cold_humidity = 0.0f;
-
-    this->aht = Adafruit_AHTX0();
 }
 
 void AHT20::begin()
@@ -19,13 +17,17 @@ void AHT20::begin()
 
 float AHT20::getTemp()
 {
-    this->aht.getEvent(&this->humidity, &this->temp);
+    sensors_event_t humidity_event, temp_event;
+    this->temp = aht.getEvent(&humidity_event , &temp_event);
+    this->temp = temp_event.temperature;
     return this->temp;
 }
 
 float AHT20::getHumidity()
 {
-    this->aht.getEvent(&this->humidity, &this->temp);
+    sensors_event_t humidity_event, temp_event;
+    this->humidity = aht.getEvent(&humidity_event , &temp_event);
+    this->humidity = humidity_event.relative_humidity;
     return this->humidity;
 }
 

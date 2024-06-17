@@ -1,6 +1,6 @@
 #include <Adafruit_AHTX0.h>
-#include <Aruino.h>
-#indef AHT20_h
+#include <Arduino.h>
+#ifndef AHT20_h
 #define AHT20_h
 
 class AHT20{
@@ -23,4 +23,6 @@ class AHT20{
     float cold_humidity;
 
     Adafruit_AHTX0 aht;
-}
+};
+
+#endif

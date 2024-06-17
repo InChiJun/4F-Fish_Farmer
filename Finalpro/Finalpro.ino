@@ -1,15 +1,15 @@
 #include <Arduino.h>
-#include "thermal.h"
-Thermal thermal;
+#include "AHT20.h"
+AHT20 aht20;
 void setup() {
     Serial.begin(115200);
-    thermal.begin();
+    aht20.begin();
 }
 
 
 void loop() {
-    float temp = thermal.getTemperature();
+    //float temp = aht20.
     Serial.print("Temperature: ");
-    Serial.println(temp);
+    //Serial.println(temp);
     delay(2000);
 }

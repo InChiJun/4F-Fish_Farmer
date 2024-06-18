@@ -1,5 +1,5 @@
 # 디렉터리 소개
-C와 C++로 MQTT receive 코드를 구현하였습니다.
+C와 C++로 MQTT receive 코드를 구현하였습니다.  
 MQTT 기본 틀 코드를 활용해서 데이터 송수신할 때 사용하시면 됩니다.
 
 # Makefile

@@ -9,6 +9,10 @@ class motor{
     void water_fill();
     void water_drain();
     void stop();
+    void power_on();
+    void power_off();
+    void power_up();
+    void power_down();
 
     private:
     int motorA1;

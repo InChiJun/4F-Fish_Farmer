@@ -2,6 +2,7 @@
 #define MOTOR_H
 
 #include "output_interface.h"
+#include <Arduino.h>  // Arduino 환경에서 제공되는 함수 사용을 위해 필요합니다.
 
 class Motor : public Output_interface
 {

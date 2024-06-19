@@ -1,8 +1,7 @@
-#include <Adafruit_AHTX0.h>
-#include <Arduino.h>
 #ifndef AHT20_h
 #define AHT20_h
-
+#include "Adafruit_AHTX0.h"
+#include <Arduino.h>
 class AHT20{
     public:
     AHT20();

@@ -32,5 +32,5 @@ void Motor::set_pin(uint8_t pin1, uint8_t pin2) {
     pinMode(pin1, OUTPUT);
     pinMode(pin2, OUTPUT);
     digitalWrite(pin1, LOW);
-    digitalWrite(pin2, LOW);   
+    digitalWrite(pin2, LOW);
 }

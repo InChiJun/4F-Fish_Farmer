@@ -1,6 +1,7 @@
-#include <Arduino.h>
+
 #ifndef PHSENSOR_H
 #define PHSENSOR_H
+#include "Arduino.h"
 #define Vref 4.95
 class Phsensor{
 public:

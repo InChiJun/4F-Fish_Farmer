@@ -1,15 +1,17 @@
+#include "Arduino.h"
 #include "Phsensor.h"
+#include "AHT20.h"
+#include "thermal.h"
+
 Phsensor phsensor;
+AHT20 aht20;
+Thermal thermal;
+
 void setup()
 {
-    Serial.begin(115200);
-    
-    
+    Serial.begin(115200);    
 }
 void loop()
 {
-    float ph = phsensor.get_Ph();
-    Serial.print("PH: ");
-    Serial.println(ph);
     delay(1000);
 }

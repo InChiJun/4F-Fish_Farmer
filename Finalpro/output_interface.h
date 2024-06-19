@@ -6,10 +6,7 @@
 class Output_interface
 {
 public:
-    // 순수 가상 소멸자는 기본 구현을 제공해야 합니다.
     virtual ~Output_interface() = default;
-
-    // 순수 가상 함수들
     virtual void power_on() = 0;
     virtual void power_off() = 0;
     virtual bool get_power() const = 0;
@@ -20,3 +17,4 @@ public:
 };
 
 #endif
+

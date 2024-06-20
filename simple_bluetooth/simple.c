@@ -35,9 +35,9 @@ int main(int argc, char** argv){
 	}
 
 	for(i = 0; i < num_rsp ; i++){
-		ba2str(&(devices+i)−>bdaddr, addr); // 주소구조체 -> 주소문자열
+		ba2str(&(devices+i)->bdaddr, addr); // 주소구조체 -> 주소문자열
 		memset(name, 0, sizeof(name));
-		if(0 != hci_read_remote_name(sock, &(devices+i)−>bdaddr, sizeof(name), name, 0)){ // 디바이스 주소에서 이름 읽어오기
+		if(0 != hci_read_remote_name(sock, &(devices+i)->bdaddr, sizeof(name), name, 0)){ // 디바이스 주소에서 이름 읽어오기
 			strcpy(name, "[unknown]");
 		}
 		printf("%s %s\n", addr, name);

@@ -1,49 +1,22 @@
-#include <ArduinoBLE.h>
-#include <Arduino.h>
-BLEService CountingService("19B10000-E8F2-537E-4F6C-D104768A1214");
-BLEStringCharacteristic CountingChar("19B10001-E8F2-537E-4F6C-D104768A1214", BLEWrite | BLERead | BLENotify, 20);
-
-void setup() {
-    Serial.begin(115200);
-
-    if (!BLE.begin()) {
-        Serial.println("starting BLE failed!");
-        while (1);
-    }
-
-    Serial.println("Central device active, searching for peripherals...");
-    BLE.scanForUuid("19B10000-E8F2-537E-4F6C-D104768A1214");
+#include <SoftwareSerial.h> // 블루투스 시리얼 통신 라이브러리 추가
+#define BT_RXD 8
+#define BT_TXD 7
+SoftwareSerial bluetooth(BT_RXD, BT_TXD); // 블루투스 설정 BTSerial(Tx, Rx)
+void setup()
+{
+    Serial.begin(9600);
+    bluetooth.begin(9600); // 블루투스 통신 시작
 }
-
-void loop() {
-    BLEDevice peripheral = BLE.available();
-
-    if (peripheral) {
-        Serial.print("Found peripheral: ");
-        Serial.println(peripheral.address());
-
-        if (peripheral.connect()) {
-            Serial.println("Connected to peripheral");
-
-            if (peripheral.discoverAttributes()) {
-                Serial.println("Attributes discovered");
-
-                BLECharacteristic countingChar = peripheral.characteristic("19B10001-E8F2-537E-4F6C-D104768A1214");
-
-                if (countingChar) {
-                    while (peripheral.connected()) {
-                        if (countingChar.written()) {
-                            String value = countingChar.value();
-                            Serial.print("Received: ");
-                            Serial.println(value);
-                        }
-                    }
-                }
-            }
-        }
-
-        Serial.println("Peripheral disconnected");
+void loop()
+{
+    
+    if (bluetooth.available())
+    { // 블루투스에서 보낸 내용은 시리얼모니터로 전송
+        Serial.write(bluetooth.read());
     }
-
+    if (Serial.available())
+    { // 시리얼모니터에서 보낸 내용은 블루투스로 전송
+        bluetooth.write(Serial.read());
+    }
     delay(1000);
 }

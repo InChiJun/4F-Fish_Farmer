@@ -1,5 +1,5 @@
 Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma2d.o: \
- C:/TouchGFXProjects/MyApplication/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c \
+ C:/TouchGFXProjects/test/4F-Fish_Farmer/MyApplication/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -35,7 +35,9 @@ Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma2d.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
- ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:
@@ -72,3 +74,5 @@ Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_dma2d.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:

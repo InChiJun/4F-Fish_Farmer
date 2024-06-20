@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/STM32TouchController.o: \
- C:/TouchGFXProjects/MyApplication/TouchGFX/target/STM32TouchController.cpp \
+ C:/TouchGFXProjects/test/4F-Fish_Farmer/MyApplication/TouchGFX/target/STM32TouchController.cpp \
  ../../TouchGFX/target/STM32TouchController.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
@@ -70,6 +70,8 @@ Application/User/TouchGFX/target/STM32TouchController.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp
 ../../TouchGFX/target/STM32TouchController.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp:
@@ -141,4 +143,6 @@ Application/User/TouchGFX/target/STM32TouchController.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp:

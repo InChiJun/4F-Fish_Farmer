@@ -1,6 +1,6 @@
 Drivers/BSP/stm32746g_discovery_qspi.o: \
- C:/TouchGFXProjects/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.c \
- C:/TouchGFXProjects/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h \
+ C:/TouchGFXProjects/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.c \
+ C:/TouchGFXProjects/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -37,8 +37,10 @@ Drivers/BSP/stm32746g_discovery_qspi.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
- C:/TouchGFXProjects/MyApplication/Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h
-C:/TouchGFXProjects/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h:
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
+ C:/TouchGFXProjects/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h
+C:/TouchGFXProjects/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:
@@ -75,4 +77,6 @@ C:/TouchGFXProjects/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_disc
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
-C:/TouchGFXProjects/MyApplication/Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
+C:/TouchGFXProjects/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h:

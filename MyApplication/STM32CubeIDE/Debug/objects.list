@@ -1,3 +1,4 @@
+"./Application/User/Core/bluetooth.o"
 "./Application/User/Core/freertos.o"
 "./Application/User/Core/main.o"
 "./Application/User/Core/stm32f7xx_hal_msp.o"
@@ -68,6 +69,8 @@
 "./Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sdram.o"
 "./Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_tim.o"
 "./Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_tim_ex.o"
+"./Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_uart.o"
+"./Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_uart_ex.o"
 "./Drivers/STM32F7xx_HAL_Driver/stm32f7xx_ll_fmc.o"
 "./Middlewares/FreeRTOS/cmsis_os2.o"
 "./Middlewares/FreeRTOS/croutine.o"

@@ -1,5 +1,5 @@
 CXX = gcc # 컴파일러 선택
-LIBS = -lbluetooth # mosquitto 라이브러리 삽입
+LIBS = -lbluetooth # bluetooth 라이브러리 삽입
 
 TARGET = simple_bluetooth # 실행파일 이름
 

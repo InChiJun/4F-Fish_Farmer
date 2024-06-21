@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h> // 블루투스 시리얼 통신 라이브러리 추가
-#define BT_RXD 8
-#define BT_TXD 7
+#define BT_RXD 8 // 데이터 핀 번호
+#define BT_TXD 7 // 데이터 핀 번호
 SoftwareSerial bluetooth(BT_RXD, BT_TXD); // 블루투스 설정 BTSerial(Tx, Rx)
 void setup()
 {

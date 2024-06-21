@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stm32746g_discovery_qspi.h>
+#include "stdbool.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -70,7 +71,7 @@ LTDC_HandleTypeDef hltdc;
 
 QSPI_HandleTypeDef hqspi;
 
-UART_HandleTypeDef huart4;
+UART_HandleTypeDef huart7;
 
 SDRAM_HandleTypeDef hsdram1;
 
@@ -109,7 +110,7 @@ static void MX_FMC_Init(void);
 static void MX_I2C3_Init(void);
 static void MX_LTDC_Init(void);
 static void MX_QUADSPI_Init(void);
-static void MX_UART4_Init(void);
+static void MX_UART7_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 void BLE_Task(void *argument);
@@ -120,7 +121,102 @@ void BLE_Task(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+// STM32F746, Bluetooth HC06 test
 
+//----------------------------------------------------
+struct {
+    uint8_t rb[128];
+    uint16_t rc;
+    uint16_t ct1;
+    bool rfg;
+} cm7;
+
+
+struct {
+    bool repeat;
+} key;
+
+//----------------------------------------------------
+void UART7_IRQHandler()
+{
+    if (UART7->ISR & UART_FLAG_RXNE) {
+        cm7.rb[cm7.rc++] = UART7->RDR;
+        cm7.ct1 = 2;
+    }
+    HAL_UART_IRQHandler(&huart7);
+}
+
+//----------------------------------------------------
+void put_AT(void) // return 'OK'
+{
+    uint8_t bf[] = "AT";
+    for (uint8_t i = 0; i < 2; ++i) {
+        UART7->TDR = bf[i];
+        while ((UART7->ISR & 0x40) == 0);
+    }
+}
+
+void send_Hello(void)
+{
+    uint8_t bf[] = "Hello";
+    HAL_UART_Transmit(&huart7, bf, sizeof(bf), HAL_MAX_DELAY);
+}
+
+//----------------------------------------------------
+void put_ATBAUD4() // return 'OK9600'
+{
+    uint8_t tb[] = "AT+BAUD4";
+    for (uint8_t i = 0; i < 8; ++i) {
+        UART7->TDR = tb[i];
+        while ((UART7->ISR & 0x40) == 0);
+    }
+}
+
+//----------------------------------------------------
+void put_ATPIN0000() // return 'OKsetPIN'
+{
+    uint8_t tb[] = "AT+PIN0000";
+    for (uint8_t i = 0; i < 10; ++i) {
+        UART7->TDR = tb[i];
+        while ((UART7->ISR & 0x40) == 0);
+    }
+}
+
+//----------------------------------------------------
+void put_ATNAMEHC06() // Change Bluetooth device name to HC06
+{
+    uint8_t tb[] = "AT+NAMEHC06";
+    HAL_UART_Transmit(&huart7, tb, 11, 100);
+}
+
+//----------------------------------------------------
+void chk_key()
+{
+    if ((GPIOI->IDR & 0x00000800) == 0) { // PI11 low?
+        key.repeat = false;
+        return;
+    }
+    if (key.repeat == true) return;
+    key.repeat = true;
+
+    put_AT();
+    put_ATBAUD4();
+    put_ATPIN0000();
+    put_ATNAMEHC06();
+}
+
+
+//----------------------------------------------------
+void chk_tim()
+{
+    if (cm7.ct1 > 0) {
+        if (!(--cm7.ct1)) {
+            cm7.rc = 0;
+            cm7.rfg = true;
+        }
+    }
+    chk_key();
+}
 /* USER CODE END 0 */
 
 /**
@@ -170,7 +266,7 @@ int main(void)
   MX_LTDC_Init();
   MX_QUADSPI_Init();
   MX_LIBJPEG_Init();
-  MX_UART4_Init();
+  MX_UART7_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -500,37 +596,37 @@ static void MX_QUADSPI_Init(void)
 }
 
 /**
-  * @brief UART4 Initialization Function
+  * @brief UART7 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_UART4_Init(void)
+static void MX_UART7_Init(void)
 {
 
-  /* USER CODE BEGIN UART4_Init 0 */
+  /* USER CODE BEGIN UART7_Init 0 */
 
-  /* USER CODE END UART4_Init 0 */
+  /* USER CODE END UART7_Init 0 */
 
-  /* USER CODE BEGIN UART4_Init 1 */
+  /* USER CODE BEGIN UART7_Init 1 */
 
-  /* USER CODE END UART4_Init 1 */
-  huart4.Instance = UART4;
-  huart4.Init.BaudRate = 9600;
-  huart4.Init.WordLength = UART_WORDLENGTH_8B;
-  huart4.Init.StopBits = UART_STOPBITS_1;
-  huart4.Init.Parity = UART_PARITY_NONE;
-  huart4.Init.Mode = UART_MODE_TX_RX;
-  huart4.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart4.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart4.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart4.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart4) != HAL_OK)
+  /* USER CODE END UART7_Init 1 */
+  huart7.Instance = UART7;
+  huart7.Init.BaudRate = 9600;
+  huart7.Init.WordLength = UART_WORDLENGTH_8B;
+  huart7.Init.StopBits = UART_STOPBITS_1;
+  huart7.Init.Parity = UART_PARITY_NONE;
+  huart7.Init.Mode = UART_MODE_TX_RX;
+  huart7.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart7.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart7.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart7.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart7) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN UART4_Init 2 */
+  /* USER CODE BEGIN UART7_Init 2 */
 
-  /* USER CODE END UART4_Init 2 */
+  /* USER CODE END UART7_Init 2 */
 
 }
 
@@ -652,11 +748,11 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOJ_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOK_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOI_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(VSYNC_FREQ_GPIO_Port, VSYNC_FREQ_Pin, GPIO_PIN_RESET);
@@ -729,7 +825,7 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(100);
+	  osDelay(100);
   }
   /* USER CODE END 5 */
 }
@@ -745,9 +841,20 @@ void BLE_Task(void *argument)
 {
   /* USER CODE BEGIN BLE_Task */
   /* Infinite loop */
+	put_ATBAUD4();
+	put_ATNAMEHC06();
+	put_ATPIN0000();
   for(;;)
   {
-    osDelay(1);
+	  send_Hello();
+
+
+	  chk_tim();
+	  if (cm7.rfg == true)
+	  {
+	  	cm7.rfg = false;
+	  }
+    osDelay(25);
   }
   /* USER CODE END BLE_Task */
 }

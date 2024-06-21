@@ -16,7 +16,7 @@ int main(int argc , char **argv){
 
 	// bind socket to port 1 of the first available bluetooth adapter
 	loc_addr.rc_family = AF_BLUETOOTH; // 블루투스 프로토콜 사용
-	loc_addr.rc_bdaddr = *BDADDRANY; // 로컬디바이스 주소
+	loc_addr.rc_bdaddr = *BDADDR_ANY; // 로컬디바이스 주소
 	loc_addr.rc_channel = 1; // 포트 번호
 	bind(s, (struct sockaddr *)&loc_addr, sizeof(loc_addr)); // 소켓 정보들 묶기
 

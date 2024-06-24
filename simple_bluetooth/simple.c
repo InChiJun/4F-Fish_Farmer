@@ -21,7 +21,7 @@ int main(int argc, char** argv){
 		exit (1);
 	}
 
-	len = 8;
+	len = 80;
 	max_rsp = 255;
 	flags = IREQ_CACHE_FLUSH;
 	devices = (inquiry_info*)malloc(max_rsp * sizeof(inquiry_info));

@@ -7,7 +7,7 @@ class SZH{
     SZH();
     void begin();
     float water_level();
-    void set_alarm_temp(float high, float low);
+    void set_alarm_depth(float high, float low);
     uint8_t check_alarm();
     
     private:

@@ -1,4 +1,4 @@
-#include <Adafruit_AHTX0.h>
+#include <Adafruit_AHTX0.h> //온습도센서
 #include <Arduino.h>
 #ifndef AHT20_h
 #define AHT20_h

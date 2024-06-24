@@ -1,4 +1,4 @@
-#include "AHT20.h"
+#include "AHT20.h" //온습도센서
 
 AHT20::AHT20()
 {

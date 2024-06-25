@@ -31,7 +31,7 @@ void MainView::tearDownScreen()
 void MainView::handleTickEvent()
 {
     tickCounter++;
-
+    presenter->tick();
     // Insert each second tick
     if (tickCounter % 2 == 0)
     {
@@ -68,4 +68,21 @@ void MainView::sliderValueChanged(int value)
 
     graphMajorYAxisLabel.invalidate();
     graphMajorYAxisGrid.invalidate();
+}
+
+void MainView::send_hello()
+{
+	presenter->con_sh_bc();
+}
+
+void MainView::update_text(const uint8_t* data, uint16_t size)
+{
+	Unicode::UnicodeChar ch_data[256];
+	for(int i =size ; i>0; i--)
+	{
+		ch_data[i]= data[i];
+	}
+    Unicode::strncpy(textArea1Buffer, ch_data, size);
+    textArea1Buffer[size] = '\0'; // Null termination
+    textArea1.invalidate(); // 화면 갱신
 }

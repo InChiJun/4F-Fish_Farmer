@@ -26,7 +26,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stm32746g_discovery_qspi.h>
+#include "bluetoothinterface.h"
+#include <gui/model/Model.hpp>
 #include "stdbool.h"
+#include "stdlib.h"
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,6 +100,11 @@ const osThreadAttr_t Bluethooth_task_attributes = {
   .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for bluMutex */
+osMutexId_t bluMutexHandle;
+const osMutexAttr_t bluMutex_attributes = {
+  .name = "bluMutex"
+};
 /* USER CODE BEGIN PV */
 static FMC_SDRAM_CommandTypeDef Command;
 /* USER CODE END PV */
@@ -124,99 +133,7 @@ void BLE_Task(void *argument);
 // STM32F746, Bluetooth HC06 test
 
 //----------------------------------------------------
-struct {
-    uint8_t rb[128];
-    uint16_t rc;
-    uint16_t ct1;
-    bool rfg;
-} cm7;
-
-
-struct {
-    bool repeat;
-} key;
-
-//----------------------------------------------------
-void UART7_IRQHandler()
-{
-    if (UART7->ISR & UART_FLAG_RXNE) {
-        cm7.rb[cm7.rc++] = UART7->RDR;
-        cm7.ct1 = 2;
-    }
-    HAL_UART_IRQHandler(&huart7);
-}
-
-//----------------------------------------------------
-void put_AT(void) // return 'OK'
-{
-    uint8_t bf[] = "AT";
-    for (uint8_t i = 0; i < 2; ++i) {
-        UART7->TDR = bf[i];
-        while ((UART7->ISR & 0x40) == 0);
-    }
-}
-
-void send_Hello(void)
-{
-    uint8_t bf[] = "Hello";
-    HAL_UART_Transmit(&huart7, bf, sizeof(bf), HAL_MAX_DELAY);
-}
-
-//----------------------------------------------------
-void put_ATBAUD4() // return 'OK9600'
-{
-    uint8_t tb[] = "AT+BAUD4";
-    for (uint8_t i = 0; i < 8; ++i) {
-        UART7->TDR = tb[i];
-        while ((UART7->ISR & 0x40) == 0);
-    }
-}
-
-//----------------------------------------------------
-void put_ATPIN0000() // return 'OKsetPIN'
-{
-    uint8_t tb[] = "AT+PIN0000";
-    for (uint8_t i = 0; i < 10; ++i) {
-        UART7->TDR = tb[i];
-        while ((UART7->ISR & 0x40) == 0);
-    }
-}
-
-//----------------------------------------------------
-void put_ATNAMEHC06() // Change Bluetooth device name to HC06
-{
-    uint8_t tb[] = "AT+NAMEHC06";
-    HAL_UART_Transmit(&huart7, tb, 11, 100);
-}
-
-//----------------------------------------------------
-void chk_key()
-{
-    if ((GPIOI->IDR & 0x00000800) == 0) { // PI11 low?
-        key.repeat = false;
-        return;
-    }
-    if (key.repeat == true) return;
-    key.repeat = true;
-
-    put_AT();
-    put_ATBAUD4();
-    put_ATPIN0000();
-    put_ATNAMEHC06();
-}
-
-
-//----------------------------------------------------
-void chk_tim()
-{
-    if (cm7.ct1 > 0) {
-        if (!(--cm7.ct1)) {
-            cm7.rc = 0;
-            cm7.rfg = true;
-        }
-    }
-    chk_key();
-}
+void toggle_bt_button(void);
 /* USER CODE END 0 */
 
 /**
@@ -276,6 +193,9 @@ int main(void)
 
   /* Init scheduler */
   osKernelInitialize();
+  /* Create the mutex(es) */
+  /* creation of bluMutex */
+  bluMutexHandle = osMutexNew(&bluMutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -611,7 +531,7 @@ static void MX_UART7_Init(void)
 
   /* USER CODE END UART7_Init 1 */
   huart7.Instance = UART7;
-  huart7.Init.BaudRate = 9600;
+  huart7.Init.BaudRate = 115200;
   huart7.Init.WordLength = UART_WORDLENGTH_8B;
   huart7.Init.StopBits = UART_STOPBITS_1;
   huart7.Init.Parity = UART_PARITY_NONE;
@@ -809,6 +729,42 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+uint8_t rx_bt_data[256];
+void Bluetooth_Receive_Callback(uint8_t* data, uint16_t size) {
+    //Bluetooth_write_data(&bt, data, size);
+}
+
+void Bluetooth_Transmit_Callback(void) {
+}
+
+
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
+
+    if (huart->Instance == UART7) {
+        bt.tx_complete = 1;
+        if (bt.bluetooth_tx_callback) {
+            bt.bluetooth_tx_callback();
+        }
+    }
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == UART7) {
+        Bluetooth_handle_rx_interrupt(&bt);
+    }
+}
+
+
+void push_bt_button(void){
+
+	osStatus_t mutex_status = osMutexAcquire(bluMutexHandle, osWaitForever);
+	if (mutex_status == osOK){
+	uint8_t data_[] = "Hello";
+	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
+	}
+	 osMutexRelease(bluMutexHandle);
+}
 
 /* USER CODE END 4 */
 
@@ -841,19 +797,14 @@ void BLE_Task(void *argument)
 {
   /* USER CODE BEGIN BLE_Task */
   /* Infinite loop */
-	put_ATBAUD4();
-	put_ATNAMEHC06();
-	put_ATPIN0000();
+	Bluetooth_init(&bt, &huart7, Bluetooth_Receive_Callback, Bluetooth_Transmit_Callback);
+	uint8_t data[] = "Hello";
+	Bluetooth_write_data(&bt, data, sizeof(data)-1);
+
   for(;;)
   {
-	  send_Hello();
 
 
-	  chk_tim();
-	  if (cm7.rfg == true)
-	  {
-	  	cm7.rfg = false;
-	  }
     osDelay(25);
   }
   /* USER CODE END BLE_Task */

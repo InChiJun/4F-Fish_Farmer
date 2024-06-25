@@ -12,8 +12,14 @@
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_JOGG" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
+        <Translation Language="GB">&lt;text&gt;Hi</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="labels" Font="NotoSans-Regular.ttf" Size="12" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="-., 0123456789" />
+    <Typography Id="T___SINGLEUSE_JOGG" Font="verdana.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
   </Typographies>
 </TextDatabase>

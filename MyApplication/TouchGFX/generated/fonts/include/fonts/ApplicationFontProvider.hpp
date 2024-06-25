@@ -14,12 +14,14 @@ class FlashDataReader;
 struct Typography
 {
     static const touchgfx::FontId LABELS = 0;
+    static const touchgfx::FontId T___SINGLEUSE_JOGG = 1;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId LABELS = 0; // NotoSans_Regular_12_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 1;
+    static const touchgfx::FontId LABELS = 0;             // NotoSans_Regular_12_4bpp
+    static const touchgfx::FontId T___SINGLEUSE_JOGG = 1; // verdana_25_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 2;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

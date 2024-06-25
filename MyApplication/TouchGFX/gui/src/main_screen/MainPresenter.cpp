@@ -1,6 +1,7 @@
 #include <gui/main_screen/MainView.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
-
+#include "bluetoothinterface.h"
+extern Bluetooth bt;
 MainPresenter::MainPresenter(MainView& v)
     : view(v)
 {
@@ -15,4 +16,19 @@ void MainPresenter::activate()
 void MainPresenter::deactivate()
 {
 
+}
+
+void MainPresenter::con_sh_bc()
+{
+	model->push_button();
+}
+
+void MainPresenter::tick()
+{
+	if (bt.rx_index > 0) { // bt.rx_index는 수신된 데이터의 길이를 나타내므로 0보다 커야 유효한 데이터가 있다고 판단합니다.
+	        // bt.rx_buffer 값을 MainView의 update_text 함수를 통해 업데이트
+	        view.update_text(bt.rx_buffer, bt.rx_index); // bt.rx_buffer의 데이터를 view에 업데이트 요청
+	        bt.rx_index = 0; // 데이터를 처리했으므로 인덱스 초기화
+	        memset(bt.rx_buffer, 0, sizeof(bt.rx_buffer)); // 버퍼 초기화
+	    }
 }

@@ -2,7 +2,7 @@
 #define MODEL_HPP
 
 #include <stdint.h>
-
+#include "main.h"
 class ModelListener;
 
 class Model
@@ -16,8 +16,11 @@ public:
     }
 
     void tick();
+    void push_button();
+
 protected:
     ModelListener* modelListener;
 };
+extern uint8_t rx_data[256];
 
 #endif // MODEL_HPP

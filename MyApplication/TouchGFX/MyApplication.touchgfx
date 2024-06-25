@@ -103,6 +103,31 @@
             "ValueMax": 250,
             "ValueMin": 20,
             "InitValue": 180
+          },
+          {
+            "Type": "Button",
+            "Name": "bt_send_hello",
+            "X": 199,
+            "Y": 201,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 125,
+            "Y": 9,
+            "Width": 151,
+            "Height": 30,
+            "TextId": "__SingleUse_JOGG",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": [
@@ -115,6 +140,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "sliderValueChanged"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bt_send_hello"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "send_hello"
             }
           }
         ]

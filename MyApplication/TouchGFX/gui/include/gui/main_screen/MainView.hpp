@@ -11,11 +11,14 @@ public:
     virtual ~MainView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void update_text(const uint8_t* data, uint16_t size);
 protected:
     int tickCounter;
 
     void handleTickEvent();
     virtual void sliderValueChanged(int value);
+    virtual void send_hello();
+
 };
 
 #endif // MAINVIEW_HPP

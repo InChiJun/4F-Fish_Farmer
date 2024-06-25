@@ -47,6 +47,7 @@ Application/User/TouchGFX/target \
 Application/User/TouchGFX/target/generated \
 Application/User/generated \
 Application/User/gui \
+Application/bluetoothinterface \
 Drivers/BSP \
 Drivers/CMSIS \
 Drivers/Components \

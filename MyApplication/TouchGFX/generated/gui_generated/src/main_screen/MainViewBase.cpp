@@ -8,7 +8,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 MainViewBase::MainViewBase() :
-    sliderValueChangedCallback(this, &MainViewBase::sliderValueChangedCallbackHandler)
+    sliderValueChangedCallback(this, &MainViewBase::sliderValueChangedCallbackHandler),
+    buttonCallback(this, &MainViewBase::buttonCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -58,13 +59,26 @@ MainViewBase::MainViewBase() :
 
     add(graph);
 
-    sliderResolution.setXY(424, 47);
+    sliderResolution.setXY(422, 47);
     sliderResolution.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
     sliderResolution.setupVerticalSlider(7, 3, 0, 0, 125);
     sliderResolution.setValueRange(20, 250);
     sliderResolution.setValue(180);
     sliderResolution.setNewValueCallback(sliderValueChangedCallback);
     add(sliderResolution);
+
+    bt_send_hello.setXY(199, 201);
+    bt_send_hello.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    bt_send_hello.setAction(buttonCallback);
+    add(bt_send_hello);
+
+    textArea1.setPosition(125, 9, 151, 30);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1Buffer[0] = 0;
+    textArea1.setWildcard(textArea1Buffer);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JOGG));
+    add(textArea1);
 }
 
 MainViewBase::~MainViewBase()
@@ -85,5 +99,16 @@ void MainViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider& src
         //When sliderResolution value changed call virtual function
         //Call sliderValueChanged
         sliderValueChanged(value);
+    }
+}
+
+void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &bt_send_hello)
+    {
+        //Interaction1
+        //When bt_send_hello clicked call virtual function
+        //Call send_hello
+        send_hello();
     }
 }

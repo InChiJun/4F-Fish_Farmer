@@ -15,6 +15,8 @@
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class MainViewBase : public touchgfx::View<MainPresenter>
 {
@@ -27,6 +29,10 @@ public:
      * Virtual Action Handlers
      */
     virtual void sliderValueChanged(int value)
+    {
+        // Override and implement this function in Main
+    }
+    virtual void send_hello()
     {
         // Override and implement this function in Main
     }
@@ -49,6 +55,14 @@ protected:
     touchgfx::GraphElementLine graphLine1;
     touchgfx::PainterRGB565 graphLine1Painter;
     touchgfx::Slider sliderResolution;
+    touchgfx::Button bt_send_hello;
+    touchgfx::TextAreaWithOneWildcard textArea1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREA1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textArea1Buffer[TEXTAREA1_SIZE];
 
 private:
 
@@ -62,11 +76,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<MainViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
+    touchgfx::Callback<MainViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

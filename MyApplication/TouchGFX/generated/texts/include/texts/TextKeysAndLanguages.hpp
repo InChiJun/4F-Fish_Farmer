@@ -14,6 +14,7 @@ enum TEXTS
 {
     T___SINGLEUSE_QBP0,
     T___SINGLEUSE_ODQ8,
+    T___SINGLEUSE_JOGG,
     NUMBER_OF_TEXT_KEYS
 };
 

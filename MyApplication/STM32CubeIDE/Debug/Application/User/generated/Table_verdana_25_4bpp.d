@@ -1,5 +1,5 @@
 Application/User/generated/Table_verdana_25_4bpp.o: \
- C:/TouchGFXProjects/test1/4F-Fish_Farmer/MyApplication/TouchGFX/generated/fonts/src/Table_verdana_25_4bpp.cpp \
+ C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/fonts/src/Table_verdana_25_4bpp.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

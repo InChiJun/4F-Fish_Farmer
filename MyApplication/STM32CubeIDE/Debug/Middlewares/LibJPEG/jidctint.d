@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jidctint.o: \
- C:/TouchGFXProjects/test1/4F-Fish_Farmer/MyApplication/Middlewares/Third_Party/LibJPEG/source/jidctint.c \
+ C:/test/4F-Fish_Farmer/MyApplication/Middlewares/Third_Party/LibJPEG/source/jidctint.c \
  ../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../LIBJPEG/Target/jconfig.h ../../LIBJPEG/Target/jdata_conf.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \

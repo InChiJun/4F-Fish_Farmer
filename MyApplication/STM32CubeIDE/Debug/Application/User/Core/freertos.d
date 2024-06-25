@@ -1,5 +1,5 @@
 Application/User/Core/freertos.o: \
- C:/TouchGFXProjects/test1/4F-Fish_Farmer/MyApplication/Core/Src/freertos.c \
+ C:/test/4F-Fish_Farmer/MyApplication/Core/Src/freertos.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

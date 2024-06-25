@@ -1,5 +1,5 @@
 Application/User/generated/GeneratedFont.o: \
- C:/TouchGFXProjects/test1/4F-Fish_Farmer/MyApplication/TouchGFX/generated/fonts/src/GeneratedFont.cpp \
+ C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/fonts/src/GeneratedFont.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

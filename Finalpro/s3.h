@@ -1,6 +1,6 @@
 
-#ifndef PHSENSOR_H
-#define PHSENSOR_H
+#ifndef s3_h
+#define s3_h
 #include "Arduino.h"
 #define Vref 4.95
 class Phsensor{

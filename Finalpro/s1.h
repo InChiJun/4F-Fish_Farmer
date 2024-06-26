@@ -1,8 +1,8 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include <Arduino.h>
-#ifndef THERMAL_H
-#define THERMAL_H
+#ifndef s1_H
+#define s1_H
 
 class Thermal{
     public:

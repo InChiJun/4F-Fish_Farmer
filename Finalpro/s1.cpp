@@ -1,4 +1,4 @@
-#include "thermal.h"
+#include "s1.h"
 
 Thermal::Thermal() : oneWire(D2), dallasTemperature(&oneWire)
 {

@@ -1,6 +1,6 @@
 Drivers/BSP/stm32746g_discovery_qspi.o: \
- C:/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.c \
- C:/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h \
+ C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.c \
+ C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -39,8 +39,8 @@ Drivers/BSP/stm32746g_discovery_qspi.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
- C:/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h
-C:/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h:
+ C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h
+C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:
@@ -79,4 +79,4 @@ C:/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/stm32746g_d
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
-C:/test/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h:
+C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h:

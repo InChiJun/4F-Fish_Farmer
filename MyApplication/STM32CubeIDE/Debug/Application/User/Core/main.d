@@ -1,5 +1,5 @@
 Application/User/Core/main.o: \
- C:/test/4F-Fish_Farmer/MyApplication/Core/Src/main.cpp \
+ C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/Core/Src/main.cpp \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
@@ -56,7 +56,7 @@ Application/User/Core/main.o: \
  ../../LIBJPEG/Target/jmorecfg.h ../../TouchGFX/App/app_touchgfx.h \
  ../../Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h \
  ../../Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h \
- C:/test/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h \
+ C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h \
  ../../TouchGFX/gui/include/gui/model/Model.hpp
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
@@ -116,5 +116,5 @@ Application/User/Core/main.o: \
 ../../TouchGFX/App/app_touchgfx.h:
 ../../Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h:
 ../../Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h:
-C:/test/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h:
+C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h:
 ../../TouchGFX/gui/include/gui/model/Model.hpp:

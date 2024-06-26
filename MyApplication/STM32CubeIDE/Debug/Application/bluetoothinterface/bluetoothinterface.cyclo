@@ -1,4 +1,4 @@
 ../Application/bluetoothinterface/bluetoothinterface.c:7:6:Bluetooth_init	1
-../Application/bluetoothinterface/bluetoothinterface.c:36:6:Bluetooth_write_data	2
-../Application/bluetoothinterface/bluetoothinterface.c:52:6:Bluetooth_handle_rx_interrupt	2
-../Application/bluetoothinterface/bluetoothinterface.c:67:6:UART7_IRQHandler	1
+../Application/bluetoothinterface/bluetoothinterface.c:37:6:Bluetooth_write_data	2
+../Application/bluetoothinterface/bluetoothinterface.c:55:6:Bluetooth_handle_rx_interrupt	5
+../Application/bluetoothinterface/bluetoothinterface.c:75:6:UART7_IRQHandler	1

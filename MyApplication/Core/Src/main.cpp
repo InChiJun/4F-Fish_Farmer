@@ -729,9 +729,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-uint8_t rx_bt_data[256];
+char rx_bt_data[8];
 void Bluetooth_Receive_Callback(uint8_t* data, uint16_t size) {
+	strncpy(rx_bt_data,(char*)bt.rx_buffer,8);
     //Bluetooth_write_data(&bt, data, size);
+	memset(bt.rx_buffer,0,256);
 }
 
 void Bluetooth_Transmit_Callback(void) {
@@ -798,13 +800,11 @@ void BLE_Task(void *argument)
   /* USER CODE BEGIN BLE_Task */
   /* Infinite loop */
 	Bluetooth_init(&bt, &huart7, Bluetooth_Receive_Callback, Bluetooth_Transmit_Callback);
-	uint8_t data[] = "Hello";
-	Bluetooth_write_data(&bt, data, sizeof(data)-1);
 
   for(;;)
   {
 
-
+	  HAL_UART_Receive_IT(&huart7, (uint8_t *)&bt.rx_buffer[bt.rx_index], 1);
     osDelay(25);
   }
   /* USER CODE END BLE_Task */

@@ -19,6 +19,8 @@ typedef struct {
 } Bluetooth;
 
 extern Bluetooth bt;
+extern char bt_data[8];
+
 
 void Bluetooth_init(Bluetooth* bt, UART_HandleTypeDef* huart, void (*rx_callback)(uint8_t* data, uint16_t size), void (*tx_callback)(void));
 void Bluetooth_write_data(Bluetooth* bt, uint8_t* data, uint16_t size);

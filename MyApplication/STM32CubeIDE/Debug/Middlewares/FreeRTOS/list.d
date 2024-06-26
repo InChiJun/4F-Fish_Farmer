@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/list.o: \
- C:/test/4F-Fish_Farmer/MyApplication/Middlewares/Third_Party/FreeRTOS/Source/list.c \
+ C:/TouchGFXProjects/test2/4F-Fish_Farmer/MyApplication/Middlewares/Third_Party/FreeRTOS/Source/list.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

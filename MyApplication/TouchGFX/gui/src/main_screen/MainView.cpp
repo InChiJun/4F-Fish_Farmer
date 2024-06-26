@@ -32,6 +32,7 @@ void MainView::handleTickEvent()
 {
     tickCounter++;
     presenter->tick();
+
     // Insert each second tick
     if (tickCounter % 2 == 0)
     {

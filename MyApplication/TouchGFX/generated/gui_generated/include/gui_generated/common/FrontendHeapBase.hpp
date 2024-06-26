@@ -14,6 +14,10 @@
 
 #include <gui/main_screen/MainView.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
+#include <gui/sensor_screen/sensorView.hpp>
+#include <gui/sensor_screen/sensorPresenter.hpp>
+#include <gui/screen1_screen/Screen1View.hpp>
+#include <gui/screen1_screen/Screen1Presenter.hpp>
 
 
 /**
@@ -37,7 +41,9 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< MainView,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< sensorView,
+            touchgfx::meta::TypeList< Screen1View,
+            touchgfx::meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -50,7 +56,9 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< MainPresenter,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< sensorPresenter,
+            touchgfx::meta::TypeList< Screen1Presenter,
+            touchgfx::meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**

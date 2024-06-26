@@ -4,15 +4,26 @@
     <Language Id="GB" />
   </Languages>
   <Texts>
-    <TextGroup Id="Group1">
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="ResourceId1" Alignment="Left" TypographyId="T___SINGLEUSE_JOGG">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_IQT9" Alignment="Left" TypographyId="T___SINGLEUSE_JOGG">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_MTPN" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
+        <Translation Language="GB">&lt;d&gt;.&lt;d&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y7C1" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
+        <Translation Language="GB">temperature&#10;sensor</Translation>
+      </Text>
       <Text Id="__SingleUse_QBP0" Alignment="Right" TypographyId="labels">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_ODQ8" Alignment="Left" TypographyId="labels">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-    </TextGroup>
-    <TextGroup Id="Unsorted">
       <Text Id="__SingleUse_JOGG" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
         <Translation Language="GB">&lt;text&gt;Hi</Translation>
       </Text>
@@ -20,6 +31,6 @@
   </Texts>
   <Typographies>
     <Typography Id="labels" Font="NotoSans-Regular.ttf" Size="12" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="-., 0123456789" />
-    <Typography Id="T___SINGLEUSE_JOGG" Font="verdana.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="T___SINGLEUSE_JOGG" Font="verdana.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
   </Typographies>
 </TextDatabase>

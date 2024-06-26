@@ -8,7 +8,6 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 MainViewBase::MainViewBase() :
-    sliderValueChangedCallback(this, &MainViewBase::sliderValueChangedCallbackHandler),
     buttonCallback(this, &MainViewBase::buttonCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
@@ -64,7 +63,6 @@ MainViewBase::MainViewBase() :
     sliderResolution.setupVerticalSlider(7, 3, 0, 0, 125);
     sliderResolution.setValueRange(20, 250);
     sliderResolution.setValue(180);
-    sliderResolution.setNewValueCallback(sliderValueChangedCallback);
     add(sliderResolution);
 
     bt_send_hello.setXY(199, 201);
@@ -79,6 +77,11 @@ MainViewBase::MainViewBase() :
     textArea1.setWildcard(textArea1Buffer);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JOGG));
     add(textArea1);
+
+    button1.setXY(0, -1);
+    button1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    button1.setAction(buttonCallback);
+    add(button1);
 }
 
 MainViewBase::~MainViewBase()
@@ -91,17 +94,6 @@ void MainViewBase::setupScreen()
 
 }
 
-void MainViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
-{
-    if (&src == &sliderResolution)
-    {
-        //SliderValueChanged
-        //When sliderResolution value changed call virtual function
-        //Call sliderValueChanged
-        sliderValueChanged(value);
-    }
-}
-
 void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &bt_send_hello)
@@ -110,5 +102,12 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When bt_send_hello clicked call virtual function
         //Call send_hello
         send_hello();
+    }
+    if (&src == &button1)
+    {
+        //Interaction2
+        //When button1 clicked change screen to sensor
+        //Go to sensor with no screen transition
+        application().gotosensorScreenNoTransition();
     }
 }

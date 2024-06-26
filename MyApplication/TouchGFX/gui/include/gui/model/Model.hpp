@@ -21,6 +21,6 @@ public:
 protected:
     ModelListener* modelListener;
 };
-extern uint8_t rx_data[256];
+extern char rx_data[256];
 
 #endif // MODEL_HPP

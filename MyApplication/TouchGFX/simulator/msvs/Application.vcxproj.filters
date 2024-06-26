@@ -184,6 +184,30 @@
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>E28E9ADD-E160-BBB1-0AD6-5479E58A951B</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\sensor_screen">
+      <UniqueIdentifier>66EF7F12-07F2-0F97-504F-D12D6EF35C0B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\sensor_screen">
+      <UniqueIdentifier>CEB3E1CB-75C6-E1BD-6541-AFD159EA7185</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\sensor_screen">
+      <UniqueIdentifier>B482FF53-4350-B60A-5B87-BF31B017FE4B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\sensor_screen">
+      <UniqueIdentifier>2DAAA84B-CC89-21F4-C27E-E552AC758F24</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screen1_screen">
+      <UniqueIdentifier>D10DEA67-0B66-443D-B654-C71C2B91ED43</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screen1_screen">
+      <UniqueIdentifier>B2C78B6A-D6DA-3A75-A0A3-AC049A6A9A08</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screen1_screen">
+      <UniqueIdentifier>1E1CC5E0-06E2-C5EF-FBD0-102F966DC4EC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screen1_screen">
+      <UniqueIdentifier>AFB09E49-2833-5968-EFA2-DFC70FB30497</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -224,6 +248,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\sensor_screen\sensorPresenter.cpp">
+      <Filter>Source Files\gui\sensor_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\sensor_screen\sensorView.cpp">
+      <Filter>Source Files\gui\sensor_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\sensor_screen\sensorViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\sensor_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1Presenter.cpp">
+      <Filter>Source Files\gui\screen1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1View.cpp">
+      <Filter>Source Files\gui\screen1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -675,6 +717,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\sensor_screen\sensorPresenter.hpp">
+      <Filter>Header Files\gui\sensor_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\sensor_screen\sensorView.hpp">
+      <Filter>Header Files\gui\sensor_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\sensor_screen\sensorViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\sensor_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1Presenter.hpp">
+      <Filter>Header Files\gui\screen1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1View.hpp">
+      <Filter>Header Files\gui\screen1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screen1_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

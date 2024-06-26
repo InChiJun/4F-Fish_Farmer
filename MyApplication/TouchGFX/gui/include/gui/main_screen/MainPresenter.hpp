@@ -32,5 +32,4 @@ private:
 
     MainView& view;
 };
-
 #endif // MAINPRESENTER_HPP

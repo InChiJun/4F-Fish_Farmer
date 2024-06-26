@@ -128,20 +128,19 @@
               "UseBuffer": true,
               "BufferSize": 10
             }
+          },
+          {
+            "Type": "Button",
+            "Name": "button1",
+            "Y": -1,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
           }
         ],
         "Interactions": [
-          {
-            "InteractionName": "SliderValueChanged",
-            "Trigger": {
-              "Type": "TriggerSliderValueChanged",
-              "TriggerComponent": "sliderResolution"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "sliderValueChanged"
-            }
-          },
           {
             "InteractionName": "Interaction1",
             "Trigger": {
@@ -152,8 +151,87 @@
               "Type": "ActionCustom",
               "FunctionName": "send_hello"
             }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "sensor"
+            }
           }
         ]
+      },
+      {
+        "Name": "sensor",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_gradient_dark.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 54,
+            "Y": 34,
+            "Width": 130,
+            "Height": 56,
+            "RelativeFilename": "button_released.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 54,
+            "Y": 35,
+            "Width": 124,
+            "Height": 44,
+            "TextId": "__SingleUse_Y7C1",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 60,
+            "Y": 140,
+            "Width": 130,
+            "Height": 56,
+            "RelativeFilename": "button_released.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_temperature",
+            "X": 66,
+            "Y": 149,
+            "Width": 118,
+            "Height": 39,
+            "TextId": "__SingleUse_MTPN",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "ResourceId1",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_IQT9",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Screen1",
+        "Components": [],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],

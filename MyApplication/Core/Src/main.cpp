@@ -729,9 +729,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-char rx_bt_data[8];
+char rx_data[256];
 void Bluetooth_Receive_Callback(uint8_t* data, uint16_t size) {
-	strncpy(rx_bt_data,(char*)bt.rx_buffer,8);
+	if(bt.rx_buffer[0]=='\0'){
+		bt.rx_buffer[0]= bt.rx_buffer[8];
+	}
+	strncpy(rx_data,(char*)bt.rx_buffer,8);
     //Bluetooth_write_data(&bt, data, size);
 	memset(bt.rx_buffer,0,256);
 }

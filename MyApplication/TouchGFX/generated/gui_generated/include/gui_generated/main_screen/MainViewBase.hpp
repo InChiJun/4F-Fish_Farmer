@@ -28,10 +28,6 @@ public:
     /*
      * Virtual Action Handlers
      */
-    virtual void sliderValueChanged(int value)
-    {
-        // Override and implement this function in Main
-    }
     virtual void send_hello()
     {
         // Override and implement this function in Main
@@ -57,6 +53,7 @@ protected:
     touchgfx::Slider sliderResolution;
     touchgfx::Button bt_send_hello;
     touchgfx::TextAreaWithOneWildcard textArea1;
+    touchgfx::Button button1;
 
     /*
      * Wildcard Buffers
@@ -75,13 +72,11 @@ private:
     /*
      * Callback Declarations
      */
-    touchgfx::Callback<MainViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
     touchgfx::Callback<MainViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
-    void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };

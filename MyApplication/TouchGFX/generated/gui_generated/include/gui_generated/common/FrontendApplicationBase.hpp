@@ -23,6 +23,9 @@ public:
     // Main
     void gotoMainScreenNoTransition();
 
+    // sensor
+    void gotosensorScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -30,6 +33,9 @@ protected:
 
     // Main
     void gotoMainScreenNoTransitionImpl();
+
+    // sensor
+    void gotosensorScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

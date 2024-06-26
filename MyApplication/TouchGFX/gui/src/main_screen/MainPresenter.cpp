@@ -3,12 +3,6 @@
 #include "bluetoothinterface.h"
 extern Bluetooth bt;
 
-uint16_t prev_bt_index = 0;
-char sensor1[5];
-char sensor2[5];
-char sensor3[5];
-char sensor4[5];
-char sensor5[5];
 
 MainPresenter::MainPresenter(MainView& v)
     : view(v)
@@ -33,26 +27,11 @@ void MainPresenter::con_sh_bc()
 
 void MainPresenter::tick()
 {
-    uint16_t i = prev_bt_index;
-    while(bt.rx_buffer[prev_bt_index]!='S')
-    {
-    	if(prev_bt_index>bt.rx_index){prev_bt_index = 0 ; return;}
-    	prev_bt_index++;
-    }
-    // Ensure prev_bt_index is less than bt.rx_index
-    if (prev_bt_index < bt.rx_index) {
-        // Check if there are at least 8 characters available ("S1xxxx\r\n")
-        if ((bt.rx_index - i) >= 8 && strncmp((char*)bt.rx_buffer + i, "S1", 2) == 0) {
-            // Check for the terminating '\r\n' characters
-            if (bt.rx_buffer[i + 6] == '\r' && bt.rx_buffer[i + 7] == '\n') {
-                strncpy(sensor1, (char*)bt.rx_buffer + i + 2, 4);
-                // Null terminate the destination string
-                sensor1[4] = '\0';
-                // Update prev_bt_index to point after the '\r\n' characters
-                prev_bt_index = i + 8;
-            }
-        }
-    }
+	/*if(strncmp(rx_data,"S1",2)==0){
+		char change_data[4] = {rx_data[2],rx_data[3],rx_data[4],rx_data[5]};
+
+		view.update_text(change_data, 4);
+	}*/
 }
 
 /*	if (bt.rx_index > 0) { // bt.rx_index는 수신된 데이터의 길이를 나타내므로 0보다 커야 유효한 데이터가 있다고 판단합니다.

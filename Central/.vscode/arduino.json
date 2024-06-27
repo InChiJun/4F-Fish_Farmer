@@ -1,0 +1,6 @@
+{
+    "board": "arduino:renesas_uno:unor4wifi",
+    "programmer": "cmsis-dap",
+    "port": "/dev/ttyACM0",
+    "sketch": "Central.ino"
+}

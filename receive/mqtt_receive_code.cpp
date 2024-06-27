@@ -4,11 +4,13 @@
 #include <iostream>
 
 using namespace std;
+int msg_received = 0;
 
 // MQTT 메시지 수신 콜백 함수
 void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_message *message)
 {
     cout << "Received message: " << static_cast<const char *>(message->payload) << std::endl; // 수신된 MQTT 메세지 출력
+    msg_received = 1;
 }
 
 int main()
@@ -40,7 +42,7 @@ int main()
     mosquitto_message_callback_set(mosq, on_message);
 
     // 특정 토픽 구독
-    rc = mosquitto_subscribe(mosq, nullptr, "sensor/image", 0);
+    rc = mosquitto_subscribe(mosq, nullptr, "sensor/", 0);
     if (rc != MOSQ_ERR_SUCCESS)
     {
         cerr << "Error: Could not subscribe to topic." << endl; // 특정 토픽 구독 오류시 출력
@@ -50,7 +52,10 @@ int main()
     }
 
     // 메시지 루프 시작
-    rc = mosquitto_loop_forever(mosq, -1, 1);
+    rc = mosquitto_loop_start(mosq);
+    while(!msg_received)
+    mosquitto_loop_stop(mosq, true);
+
     if (rc != MOSQ_ERR_SUCCESS)
     {
         cerr << "Error: Could not start message loop." << endl; // 메시지 루프 시작 오류 출력

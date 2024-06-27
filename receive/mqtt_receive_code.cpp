@@ -4,13 +4,11 @@
 #include <iostream>
 
 using namespace std;
-int msg_received = 0;
 
 // MQTT 메시지 수신 콜백 함수
 void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_message *message)
 {
     cout << "Received message: " << static_cast<const char *>(message->payload) << std::endl; // 수신된 MQTT 메세지 출력
-    msg_received = 1;
 }
 
 int main()
@@ -52,9 +50,16 @@ int main()
     }
 
     // 메시지 루프 시작
-    rc = mosquitto_loop_start(mosq);
-    while(!msg_received)
-    mosquitto_loop_stop(mosq, true);
+    while(1){
+        rc = mosquitto_loop(mosq, -1, 1);
+        if (rc != MOSQ_ERR_SUCCESS)
+        {
+            cerr << "Error: Could not start message loop." << endl; // 메시지 루프 시작 오류 출력
+            mosquitto_destroy(mosq);
+            mosquitto_lib_cleanup();
+            return 1;
+        }
+    }
 
     if (rc != MOSQ_ERR_SUCCESS)
     {

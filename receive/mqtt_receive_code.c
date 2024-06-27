@@ -3,18 +3,12 @@
 #include <mosquitto.h>
 #include <time.h> // 실시간 받아오는 라이브러리
 #include <string.h>
-
-int msg_received = 0;
+#include <unistd.h> // sleep 함수를 사용하기 위한 헤더 파일
 
 // MQTT 메시지 수신 콜백 함수
 void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_message *message)
 {
     printf("Received message: %s\n", (char*)message->payload); // 수신된 MQTT 메세지 출력
-    msg_received = 1;
-    if(msg_received == 1){
-        mosquitto_loop_stop(mosq, true);    
-    }
-    // mosquitto_loop_stop(mosq, true);
 }
 
 int main()
@@ -56,11 +50,16 @@ int main()
     }
 
     // 메시지 루프 시작
-    mosquitto_loop_start(mosq);
-    // while(!msg_received){
-    //     mosquitto_loop_stop(mosq, false);
-    // }
-    mosquitto_loop_stop(mosq, false);
+    while(1){
+        rc = mosquitto_loop(mosq, -1, 1);
+        if (rc != MOSQ_ERR_SUCCESS)
+        {
+            fprintf(stderr, "Error: Could not start message loop.\n"); // 메시지 루프 시작 오류 출력
+            mosquitto_destroy(mosq);
+            mosquitto_lib_cleanup();
+            return 1;
+        }
+    }
 
     if (rc != MOSQ_ERR_SUCCESS)
     {
@@ -69,6 +68,5 @@ int main()
         mosquitto_lib_cleanup();
         return 1;
     }
-
     return 0;
 }

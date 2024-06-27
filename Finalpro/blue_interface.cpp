@@ -1,27 +1,49 @@
 #include "blue_interface.h"
 
-Bluetooth::Bluetooth()
-    : hc10(nullptr) // Initialize hc10 to nullptr
+Bluetooth::Bluetooth(int rxPin, int txPin) : hc10(rxPin, txPin)
 {
+  // 생성자에서 SoftwareSerial 객체 초기화
 }
 
-void Bluetooth::begin(int RX, int TX)
+Bluetooth::~Bluetooth()
 {
-    hc10 = new SoftwareSerial(RX, TX); // Dynamically allocate SoftwareSerial object
-    hc10->begin(9600); // Start serial communication at 9600 baud rate
-    delay(100);
-    if (hc10->availableForWrite()) {
-        hc10->write("AT+DISC?");
-        while (hc10->available()) {
-            char c = hc10->read();
-            Serial.write(c);
-        }
-    }
+  // 소멸자 구현
 }
+
+void Bluetooth::begin()
+{
+  hc10.begin(9600); // 시리얼 통신 속도 설정
+  delay(3000);      // 잠시 대
+
+  hc10.print("AT"); // AT 명령어 전송
+  delay(1000);       // 응답 대기
+  while (hc10.available())
+  {
+    char c = hc10.read(); // 응답 읽기
+    Serial.write(c);      // 시리얼 모니터에 출력
+  }
+  Serial.println("");
+  hc10.print("AT+DISC?"); // NAME 명령어 전송
+  delay(1000);            // 응답 대기
+  while (hc10.available())
+  {
+    char c = hc10.read(); // 응답 읽기
+    Serial.write(c);      // 시리얼 모니터에 출력
+  }
+  Serial.println("");
+  hc10.print("AT+CONN0"); // PIN 명령어 전송
+  delay(1000);     
+  while (hc10.available())
+  {
+    char c = hc10.read(); 
+    Serial.write(c);      // 시리얼 모니터에 출력
+  }       // 응답 대기
+  Serial.println("");
+}
+
+
 
 void Bluetooth::send(String data)
 {
-    if (hc10 != nullptr) {
-        hc10->print(data);
-    }
+  hc10.print(data); // 데이터 전송
 }

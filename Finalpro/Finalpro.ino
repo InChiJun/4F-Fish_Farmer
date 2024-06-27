@@ -75,16 +75,45 @@
 //     delay(1000);
 // }
 
-
-#include "Arduino.h"
 #include "blue_interface.h"
-Bluetooth bt;
-void setup()
-{
-    bt.begin(2,3);
+
+Bluetooth bt(2, 3); // Bluetooth 객체 생성 시 핀 번호 지정
+
+void setup() {
+    Serial.begin(9600);
+    delay(2000); // 초기화 대기
+    bt.begin(); // Bluetooth 모듈 초기화
 }
 
-void loop()
-{
-    
+void loop() {
+    bt.send("S11234"); // 데이터 전송
+    delay(1000); // 1초 대기
+    bt.send("S11235"); // 데이터 전송
+    bt.send("S11236"); // 데이터 전송
 }
+
+
+// #include <SoftwareSerial.h>
+ 
+// SoftwareSerial hc06(2,3);
+ 
+// void setup(){
+//   //Initialize Serial Monitor
+//   Serial.begin(9600);
+//   Serial.println("ENTER AT Commands:");
+//   //Initialize Bluetooth Serial Port<
+//   hc06.begin(9600);
+//   hc06.print("AT");
+// }
+ 
+// void loop(){
+//   //Write data from HC06 to Serial Monitor
+//   if (hc06.available()){
+//     Serial.write(hc06.read());
+//   }
+  
+//   //Write from Serial Monitor to HC06
+//   if (Serial.available()){
+//     hc06.write(Serial.read());
+//   }  
+// }

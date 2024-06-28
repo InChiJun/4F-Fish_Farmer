@@ -14,11 +14,17 @@ char pass[] = "kosta90009";
 char broker[] = "10.10.10.19";    // 열려 있는 포트의 IP 주소를 입력해야 함
 int port = 1883; // admin에서 설정한 port
 
-char p_topic1[] = "sensor/value/Sensor1"; // 주제 설정
-char p_topic2[] = "sensor/value/Sensor2"; // 주제 설정
-char p_topic3[] = "sensor/value/Sensor3"; // 주제 설정
-char p_topic4[] = "sensor/value/Sensor4"; // 주제 설정
-char p_topic5[] = "sensor/value/Sensor5"; // 주제 설정
+char p_topic1[] =   "sensor/value/Sensor1"; 
+char p_topic2[] =   "sensor/value/Sensor2"; 
+char p_topic3[] =   "sensor/value/Sensor3"; 
+char p_topic4[] =   "sensor/value/Sensor4"; 
+char p_topic5[] =   "sensor/value/Sensor5"; 
+
+char p_topic6[] =   "sensor/alarm/Sensor1";
+char p_topic7[] =   "sensor/alarm/Sensor2";
+char p_topic8[] =   "sensor/alarm/Sensor3";
+char p_topic9[] =   "sensor/alarm/Sensor4";
+char p_topic10[] =  "sensor/alarm/Sensor5";
 
 
 WiFiClient wifiClient;
@@ -56,6 +62,16 @@ void setup()
         }
         delay(1000);
     }
+    
+  mqttClient.onMessage(onMqttMessage);
+
+  Serial.print("Subscribing to topic: ");
+  Serial.println(p_topic1);
+  Serial.println();
+
+  // subscribe to a topic
+  mqttClient.subscribe(p_topic1);
+
     Serial.println("mqtt ok");
 }
 
@@ -64,6 +80,7 @@ void loop()
     mqttClient.beginMessage(p_topic1); // 특정 주제 선정
     mqttClient.print(s1.getTemperature());
     Serial.print(mqttClient.endMessage());
+    
 
     mqttClient.beginMessage(p_topic2); // 특정 주제 선정
     mqttClient.print(s2.getHumidity());
@@ -81,5 +98,25 @@ void loop()
     mqttClient.print(s5.water_level());
     Serial.print(mqttClient.endMessage());
 
+    
+
     delay(1000);
+}
+
+
+void onMqttMessage(int messageSize) {
+  // we received a message, print out the topic and contents
+  Serial.println("Received a message with topic '");
+  Serial.print(mqttClient.messageTopic());
+  Serial.print("', length ");
+  Serial.print(messageSize);
+  Serial.println(" bytes:");
+
+  // use the Stream interface to print the contents
+  while (mqttClient.available()) {
+    Serial.print((char)mqttClient.read());
+  }
+  Serial.println();
+
+  Serial.println();
 }

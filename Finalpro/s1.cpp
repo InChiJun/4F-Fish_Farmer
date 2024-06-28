@@ -7,10 +7,11 @@ Thermal::Thermal() : oneWire(D2), dallasTemperature(&oneWire)
     this->hot_temp = 35.0, this->cold_temp = 15.0;
 }
 
-void Thermal::begin()
+void Thermal::begin(float hot_temp, float cold_temp)
 {
     pinMode(pin, INPUT);
     dallasTemperature.begin();
+    set_alarm_temp(hot_temp, cold_temp);
 }
 
 float Thermal::getTemperature()

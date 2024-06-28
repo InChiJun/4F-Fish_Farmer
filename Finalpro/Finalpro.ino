@@ -41,7 +41,6 @@ void setup()
     {
         Serial.print(".");
         delay(5000);
-        
     }
     delay(1000);
     

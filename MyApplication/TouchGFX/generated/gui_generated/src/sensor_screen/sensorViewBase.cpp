@@ -6,7 +6,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-sensorViewBase::sensorViewBase()
+sensorViewBase::sensorViewBase() :
+    buttonCallback(this, &sensorViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -16,29 +17,111 @@ sensorViewBase::sensorViewBase()
     background.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_GRADIENT_DARK_ID));
     add(background);
 
-    image1.setXY(54, 34);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_ID));
-    add(image1);
+    ex1.setXY(100, 15);
+    add(ex1);
 
-    textArea1.setXY(54, 35);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y7C1));
-    add(textArea1);
+    ex2.setXY(250, 15);
+    add(ex2);
 
-    image2.setXY(60, 140);
-    image2.setBitmap(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_ID));
-    add(image2);
+    ex3.setXY(25, 145);
+    add(ex3);
 
-    text_temperature.setPosition(66, 149, 118, 39);
-    text_temperature.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    ex4.setXY(175, 145);
+    add(ex4);
+
+    ex5.setXY(325, 145);
+    add(ex5);
+
+    temperature.setPosition(106, 19, 120, 40);
+    temperature.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    temperature.setLinespacing(0);
+    temperature.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NNZ2));
+    temperature.setAlpha(150);
+    add(temperature);
+
+    humidity.setPosition(256, 19, 120, 40);
+    humidity.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    humidity.setLinespacing(0);
+    humidity.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JSNQ));
+    humidity.setAlpha(150);
+    add(humidity);
+
+    ph.setPosition(29, 149, 120, 40);
+    ph.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    ph.setLinespacing(0);
+    ph.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HHCR));
+    ph.setAlpha(150);
+    add(ph);
+
+    tds.setPosition(181, 149, 120, 40);
+    tds.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    tds.setLinespacing(0);
+    tds.setTypedText(touchgfx::TypedText(T___SINGLEUSE_44AS));
+    tds.setAlpha(150);
+    add(tds);
+
+    level.setPosition(331, 149, 120, 40);
+    level.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    level.setLinespacing(0);
+    level.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1AZS));
+    level.setAlpha(150);
+    add(level);
+
+    text_temperature.setPosition(140, 85, 50, 25);
+    text_temperature.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     text_temperature.setLinespacing(0);
-    touchgfx::Unicode::snprintf(text_temperatureBuffer1, TEXT_TEMPERATUREBUFFER1_SIZE, "%s", touchgfx::TypedText(T_RESOURCEID1).getText());
+    touchgfx::Unicode::snprintf(text_temperatureBuffer1, TEXT_TEMPERATUREBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7798).getText());
     text_temperature.setWildcard1(text_temperatureBuffer1);
     touchgfx::Unicode::snprintf(text_temperatureBuffer2, TEXT_TEMPERATUREBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_IQT9).getText());
     text_temperature.setWildcard2(text_temperatureBuffer2);
     text_temperature.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MTPN));
     add(text_temperature);
+
+    text_humidity.setPosition(290, 85, 50, 25);
+    text_humidity.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    text_humidity.setLinespacing(0);
+    touchgfx::Unicode::snprintf(text_humidityBuffer1, TEXT_HUMIDITYBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_F69V).getText());
+    text_humidity.setWildcard1(text_humidityBuffer1);
+    touchgfx::Unicode::snprintf(text_humidityBuffer2, TEXT_HUMIDITYBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_W9Z7).getText());
+    text_humidity.setWildcard2(text_humidityBuffer2);
+    text_humidity.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D9RX));
+    add(text_humidity);
+
+    text_ph.setPosition(65, 215, 50, 25);
+    text_ph.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    text_ph.setLinespacing(0);
+    touchgfx::Unicode::snprintf(text_phBuffer1, TEXT_PHBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LXQ5).getText());
+    text_ph.setWildcard1(text_phBuffer1);
+    touchgfx::Unicode::snprintf(text_phBuffer2, TEXT_PHBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_0F5D).getText());
+    text_ph.setWildcard2(text_phBuffer2);
+    text_ph.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WQQ5));
+    add(text_ph);
+
+    text_tds.setPosition(215, 215, 50, 25);
+    text_tds.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    text_tds.setLinespacing(0);
+    touchgfx::Unicode::snprintf(text_tdsBuffer1, TEXT_TDSBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_PYMH).getText());
+    text_tds.setWildcard1(text_tdsBuffer1);
+    touchgfx::Unicode::snprintf(text_tdsBuffer2, TEXT_TDSBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_K2TB).getText());
+    text_tds.setWildcard2(text_tdsBuffer2);
+    text_tds.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EHW8));
+    add(text_tds);
+
+    text_level.setPosition(366, 215, 50, 25);
+    text_level.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    text_level.setLinespacing(0);
+    touchgfx::Unicode::snprintf(text_levelBuffer1, TEXT_LEVELBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_Z25Q).getText());
+    text_level.setWildcard1(text_levelBuffer1);
+    touchgfx::Unicode::snprintf(text_levelBuffer2, TEXT_LEVELBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7RKY).getText());
+    text_level.setWildcard2(text_levelBuffer2);
+    text_level.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I690));
+    add(text_level);
+
+    back_main_btn.setXY(425, 5);
+    back_main_btn.setBitmaps(touchgfx::Bitmap(BITMAP_BACK50_ID), touchgfx::Bitmap(BITMAP_BACK50_ID));
+    back_main_btn.setAlpha(150);
+    back_main_btn.setAction(buttonCallback);
+    add(back_main_btn);
 }
 
 sensorViewBase::~sensorViewBase()
@@ -48,5 +131,20 @@ sensorViewBase::~sensorViewBase()
 
 void sensorViewBase::setupScreen()
 {
+    ex1.initialize();
+    ex2.initialize();
+    ex3.initialize();
+    ex4.initialize();
+    ex5.initialize();
+}
 
+void sensorViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &back_main_btn)
+    {
+        //back_main
+        //When back_main_btn clicked change screen to Main
+        //Go to Main with no screen transition
+        application().gotoMainScreenNoTransition();
+    }
 }

@@ -9,14 +9,9 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
-#include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
-#include <touchgfx/widgets/graph/GraphElements.hpp>
-#include <touchgfx/widgets/graph/GraphLabels.hpp>
-#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Button.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class MainViewBase : public touchgfx::View<MainPresenter>
 {
@@ -24,14 +19,6 @@ public:
     MainViewBase();
     virtual ~MainViewBase();
     virtual void setupScreen();
-
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void send_hello()
-    {
-        // Override and implement this function in Main
-    }
 
 protected:
     FrontendApplication& application() {
@@ -43,31 +30,12 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
-    touchgfx::BoxWithBorder graphBackground;
-    touchgfx::GraphWrapAndClear<100> graph;
-    touchgfx::GraphElementGridY graphMajorYAxisGrid;
-    touchgfx::GraphLabelsX graphMajorXAxisLabel;
-    touchgfx::GraphLabelsY graphMajorYAxisLabel;
-    touchgfx::GraphElementLine graphLine1;
-    touchgfx::PainterRGB565 graphLine1Painter;
-    touchgfx::Slider sliderResolution;
-    touchgfx::Button bt_send_hello;
-    touchgfx::TextAreaWithOneWildcard textArea1;
-    touchgfx::Button button1;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t TEXTAREA1_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textArea1Buffer[TEXTAREA1_SIZE];
+    touchgfx::TextArea title;
+    touchgfx::ButtonWithLabel changescreen_sensor_btn;
+    touchgfx::ButtonWithLabel changescreen_motor_btn;
+    touchgfx::Button config_btn;
 
 private:
-
-    /*
-     * Canvas Buffer Size
-     */
-    static const uint32_t CANVAS_BUFFER_SIZE = 7200;
-    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
     /*
      * Callback Declarations

@@ -196,17 +196,41 @@
     <Filter Include="Source Files\generated\gui_generated\sensor_screen">
       <UniqueIdentifier>2DAAA84B-CC89-21F4-C27E-E552AC758F24</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\screen1_screen">
-      <UniqueIdentifier>D10DEA67-0B66-443D-B654-C71C2B91ED43</UniqueIdentifier>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>148E2ABF-B852-95B4-87DE-F66F53AD0126</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\screen1_screen">
-      <UniqueIdentifier>B2C78B6A-D6DA-3A75-A0A3-AC049A6A9A08</UniqueIdentifier>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>24B3AD1F-0736-D7FD-7AC2-0A79E20FDA4C</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\screen1_screen">
-      <UniqueIdentifier>1E1CC5E0-06E2-C5EF-FBD0-102F966DC4EC</UniqueIdentifier>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>70F1270D-151C-DA8D-90BC-2D37B36DFE7A</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\screen1_screen">
-      <UniqueIdentifier>AFB09E49-2833-5968-EFA2-DFC70FB30497</UniqueIdentifier>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>5C0B9663-0EDC-ABE8-D2CF-59E0349BF04A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\motor_screen">
+      <UniqueIdentifier>81D8F430-CB7F-B1DD-0CA6-76C400A16D9A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\config_screen">
+      <UniqueIdentifier>BDE243AF-8561-D11C-DD24-FFF78C302397</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\motor_screen">
+      <UniqueIdentifier>987BF691-D875-969B-78F9-C102EA1E05CC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\config_screen">
+      <UniqueIdentifier>3AC2CA2A-E0DF-4D07-59CA-D2063827D780</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\motor_screen">
+      <UniqueIdentifier>960EB95B-6B82-3E88-0AA6-3278CD031346</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\motor_screen">
+      <UniqueIdentifier>9F389619-2A78-0483-DC04-825239AB2B38</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\config_screen">
+      <UniqueIdentifier>5F6FA88C-A04D-6386-3FFA-9E629A9A15BD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\config_screen">
+      <UniqueIdentifier>817B60F8-B71B-7FEC-B263-032A57832931</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -258,14 +282,29 @@
     <ClCompile Include="..\..\generated\gui_generated\src\sensor_screen\sensorViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\sensor_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1Presenter.cpp">
-      <Filter>Source Files\gui\screen1_screen</Filter>
+    <ClCompile Include="..\..\gui\src\containers\CustomContainer1.cpp">
+      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1View.cpp">
-      <Filter>Source Files\gui\screen1_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\CustomContainer1Base.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
+    <ClCompile Include="..\..\gui\src\config_screen\configPresenter.cpp">
+      <Filter>Source Files\gui\config_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\config_screen\configView.cpp">
+      <Filter>Source Files\gui\config_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\config_screen\configViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\config_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\motor_screen\motorPresenter.cpp">
+      <Filter>Source Files\gui\motor_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\motor_screen\motorView.cpp">
+      <Filter>Source Files\gui\motor_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\motor_screen\motorViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\motor_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -727,14 +766,29 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\sensor_screen\sensorViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\sensor_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1Presenter.hpp">
-      <Filter>Header Files\gui\screen1_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\containers\CustomContainer1.hpp">
+      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1View.hpp">
-      <Filter>Header Files\gui\screen1_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\CustomContainer1Base.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\screen1_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\config_screen\configPresenter.hpp">
+      <Filter>Header Files\gui\config_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\config_screen\configView.hpp">
+      <Filter>Header Files\gui\config_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\config_screen\configViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\config_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\motor_screen\motorPresenter.hpp">
+      <Filter>Header Files\gui\motor_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\motor_screen\motorView.hpp">
+      <Filter>Header Files\gui\motor_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\motor_screen\motorViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\motor_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

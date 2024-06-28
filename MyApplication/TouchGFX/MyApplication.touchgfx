@@ -3,165 +3,124 @@
     "Screens": [
       {
         "Name": "Main",
-        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "Image",
             "Name": "background",
             "Width": 480,
             "Height": 272,
-            "RelativeFilename": "__designer\\Blue_Backgrounds_Main_bg_480x272px.png"
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_gradient_dark.png"
           },
           {
-            "Type": "BoxWithBorder",
-            "Name": "graphBackground",
-            "X": 15,
-            "Y": 24,
-            "Width": 389,
-            "Height": 224,
+            "Type": "TextArea",
+            "Name": "title",
+            "X": 84,
+            "Y": 87,
+            "Width": 320,
+            "Height": 49,
+            "TextId": "__SingleUse_5Q27",
+            "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "BorderSize": 1
+            "Alpha": 150,
+            "AutoSize": true
           },
           {
-            "Type": "DynamicGraph",
-            "Name": "graph",
-            "X": 15,
-            "Y": 24,
-            "Width": 389,
-            "Height": 224,
-            "DataSeed": 1263446126,
-            "NumberOfValues": 100,
-            "MaxY": 180.0,
-            "Precision": "1",
-            "UseCustomVisibleDataPointRange": true,
-            "LastIndex": 100,
-            "XAxisScale": 1.0,
-            "LabelSizeTop": 10,
-            "LabelSizeBottom": 22,
-            "LabelSizeLeft": 28,
-            "LabelSizeRight": 19,
-            "PaddingTop": 2,
-            "PaddingBottom": 6,
-            "PaddingLeft": 6,
-            "GraphType": "GraphWrapClear",
-            "GraphDrawers": [
-              {
-                "Type": "LineDrawer",
-                "LineWidth": 2,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 20,
-                  "Green": 151,
-                  "Blue": 197
-                }
-              }
-            ],
-            "YAxisGrid": {
-              "Type": "GraphGrid",
-              "Color": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
-              },
-              "Interval": 20.0,
-              "LineWidth": 1
+            "Type": "ButtonWithLabel",
+            "Name": "changescreen_sensor_btn",
+            "X": 90,
+            "Y": 175,
+            "Width": 130,
+            "Height": 56,
+            "Pressed": "button_pressed.png",
+            "Released": "button_released.png",
+            "Alpha": 150,
+            "TextId": "__SingleUse_AMO2",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "XAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 20.0,
-              "DecimalSeparator": "Point",
-              "TextId": "__SingleUse_ODQ8",
-              "TextRotation": "0",
-              "Position": "Bottom"
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "YAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 20.0,
-              "DecimalSeparator": "Point",
-              "TextId": "__SingleUse_QBP0",
-              "TextRotation": "0",
-              "Position": "Left"
-            }
+            "TextRotation": "0"
           },
           {
-            "Type": "Slider",
-            "Name": "sliderResolution",
-            "X": 422,
-            "Y": 47,
-            "Width": 34,
-            "Height": 179,
-            "BackgroundUnselected": "__designer\\Blue_Slider_Vertical_Small_Slider3_Vertical_Round_back.png",
-            "BackgroundSelected": "__designer\\Blue_Slider_Vertical_Small_Slider3_Vertical_Round_fill.png",
-            "Indicator": "__designer\\Blue_Slider_Vertical_Small_Indicators_Slider3_Vertical_Round_nob.png",
-            "BackgroundX": 7,
-            "BackgroundY": 3,
-            "IndicatorMax": 125,
-            "ValueMax": 250,
-            "ValueMin": 20,
-            "InitValue": 180
+            "Type": "ButtonWithLabel",
+            "Name": "changescreen_motor_btn",
+            "X": 270,
+            "Y": 175,
+            "Width": 130,
+            "Height": 56,
+            "Pressed": "button_pressed.png",
+            "Released": "button_released.png",
+            "Alpha": 150,
+            "TextId": "__SingleUse_VV1A",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
           },
           {
             "Type": "Button",
-            "Name": "bt_send_hello",
-            "X": 199,
-            "Y": 201,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 125,
-            "Y": 9,
-            "Width": 151,
-            "Height": 30,
-            "TextId": "__SingleUse_JOGG",
-            "TextRotation": "0",
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "Button",
-            "Name": "button1",
-            "Y": -1,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+            "Name": "config_btn",
+            "X": 425,
+            "Y": 5,
+            "Width": 48,
+            "Height": 48,
+            "Pressed": "configuration.png",
+            "Released": "configuration.png",
+            "Alpha": 150
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "changescreen_motor",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "bt_send_hello"
+              "TriggerComponent": "changescreen_motor_btn"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "send_hello"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "motor"
             }
           },
           {
-            "InteractionName": "Interaction2",
+            "InteractionName": "changescreen_sensor",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "button1"
+              "TriggerComponent": "changescreen_sensor_btn"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "sensor"
+            }
+          },
+          {
+            "InteractionName": "changescreen_config",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "config_btn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "config"
             }
           }
         ]
@@ -177,45 +136,146 @@
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_gradient_dark.png"
           },
           {
-            "Type": "Image",
-            "Name": "image1",
-            "X": 54,
-            "Y": 34,
+            "Type": "CustomContainerInstance",
+            "Name": "ex1",
+            "X": 100,
+            "Y": 15,
             "Width": 130,
-            "Height": 56,
-            "RelativeFilename": "button_released.png"
+            "Height": 110,
+            "CustomContainerDefinitionName": "CustomContainer1"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "ex2",
+            "X": 250,
+            "Y": 15,
+            "Width": 130,
+            "Height": 110,
+            "CustomContainerDefinitionName": "CustomContainer1"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "ex3",
+            "X": 25,
+            "Y": 145,
+            "Width": 130,
+            "Height": 110,
+            "CustomContainerDefinitionName": "CustomContainer1"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "ex4",
+            "X": 175,
+            "Y": 145,
+            "Width": 130,
+            "Height": 110,
+            "CustomContainerDefinitionName": "CustomContainer1"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "ex5",
+            "X": 325,
+            "Y": 145,
+            "Width": 130,
+            "Height": 110,
+            "CustomContainerDefinitionName": "CustomContainer1"
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 54,
-            "Y": 35,
-            "Width": 124,
-            "Height": 44,
-            "TextId": "__SingleUse_Y7C1",
+            "Name": "temperature",
+            "X": 106,
+            "Y": 19,
+            "Width": 120,
+            "Height": 40,
+            "TextId": "__SingleUse_NNZ2",
             "TextRotation": "0",
-            "AutoSize": true
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150
           },
           {
-            "Type": "Image",
-            "Name": "image2",
-            "X": 60,
-            "Y": 140,
-            "Width": 130,
-            "Height": 56,
-            "RelativeFilename": "button_released.png"
+            "Type": "TextArea",
+            "Name": "humidity",
+            "X": 256,
+            "Y": 19,
+            "Width": 120,
+            "Height": 40,
+            "TextId": "__SingleUse_JSNQ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ph",
+            "X": 29,
+            "Y": 149,
+            "Width": 120,
+            "Height": 40,
+            "TextId": "__SingleUse_HHCR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tds",
+            "X": 181,
+            "Y": 149,
+            "Width": 120,
+            "Height": 40,
+            "TextId": "__SingleUse_44AS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150
+          },
+          {
+            "Type": "TextArea",
+            "Name": "level",
+            "X": 331,
+            "Y": 149,
+            "Width": 120,
+            "Height": 40,
+            "TextId": "__SingleUse_1AZS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150
           },
           {
             "Type": "TextArea",
             "Name": "text_temperature",
-            "X": 66,
-            "Y": 149,
-            "Width": 118,
-            "Height": 39,
+            "X": 140,
+            "Y": 85,
+            "Width": 50,
+            "Height": 25,
             "TextId": "__SingleUse_MTPN",
             "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
             "Wildcard1": {
-              "TextId": "ResourceId1",
+              "TextId": "__SingleUse_7798",
               "UseBuffer": true,
               "BufferSize": 3
             },
@@ -224,17 +284,237 @@
               "UseBuffer": true,
               "BufferSize": 3
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_humidity",
+            "X": 290,
+            "Y": 85,
+            "Width": 50,
+            "Height": 25,
+            "TextId": "__SingleUse_D9RX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_F69V",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_W9Z7",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_ph",
+            "X": 65,
+            "Y": 215,
+            "Width": 50,
+            "Height": 25,
+            "TextId": "__SingleUse_WQQ5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_LXQ5",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_0F5D",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_tds",
+            "X": 215,
+            "Y": 215,
+            "Width": 50,
+            "Height": 25,
+            "TextId": "__SingleUse_EHW8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_PYMH",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_K2TB",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_level",
+            "X": 366,
+            "Y": 215,
+            "Width": 50,
+            "Height": 25,
+            "TextId": "__SingleUse_I690",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_Z25Q",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_7RKY",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "back_main_btn",
+            "X": 425,
+            "Y": 5,
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "back50.png",
+            "Released": "back50.png",
+            "Alpha": 150
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "back_main",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "back_main_btn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "motor",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_gradient_dark.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "back_main_btn",
+            "X": 425,
+            "Y": 5,
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "back50.png",
+            "Released": "back50.png",
+            "Alpha": 150
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "back_main",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "back_main_btn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "config",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_gradient_dark.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "back_main_btn",
+            "X": 425,
+            "Y": 5,
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "back50.png",
+            "Released": "back50.png",
+            "Alpha": 150
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "back_main",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "back_main_btn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "CustomContainer1",
+        "Width": 130,
+        "Height": 110,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "Y": 54,
+            "Width": 130,
+            "Height": 56,
+            "RelativeFilename": "button_released.png",
+            "Alpha": 150
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Y": -2,
+            "Width": 130,
+            "Height": 56,
+            "RelativeFilename": "button_released.png",
+            "Alpha": 150
           }
         ],
         "Interactions": []
-      },
-      {
-        "Name": "Screen1",
-        "Components": [],
-        "Interactions": []
       }
     ],
-    "CustomContainerDefinitions": [],
     "Name": "MyApplication",
     "Resolution": {
       "Width": 480,

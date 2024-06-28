@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/motor_screen/motorPresenter.hpp:28:13:motorPresenter::~motorPresenter()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:10:6:virtual void motorPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/motor_screen/motorPresenter.hpp:28:13:virtual motorPresenter::~motorPresenter()	8	static
+../../TouchGFX/gui/include/gui/motor_screen/motorPresenter.hpp:28:13:virtual void* motorPresenter::_ZThn4_N14motorPresenterD1Ev()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:4:1:motorPresenter::motorPresenter(motorView&)	0	static

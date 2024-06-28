@@ -11,7 +11,11 @@ public:
     virtual ~sensorView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    void update_text(const char* data, uint16_t size);
+    void s1_update_text(const char* data, uint16_t size);
+    void s2_update_text(const char* data, uint16_t size);
+    void s3_update_text(const char* data, uint16_t size);
+    void s4_update_text(const char* data, uint16_t size);
+    void s5_update_text(const char* data, uint16_t size);
 protected:
     int tickCounter;
 

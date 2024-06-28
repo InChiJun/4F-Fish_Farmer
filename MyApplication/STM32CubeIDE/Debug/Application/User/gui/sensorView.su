@@ -6,4 +6,8 @@ C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.c
 ../../TouchGFX/gui/include/gui/sensor_screen/sensorView.hpp:11:13:virtual sensorView::~sensorView()	8	static
 C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:3:1:sensorView::sensorView()	8	static
 C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:8:6:virtual void sensorView::setupScreen()	0	static
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:23:6:void sensorView::update_text(const char*, uint16_t)	16	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:23:6:void sensorView::s1_update_text(const char*, uint16_t)	16	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:38:6:void sensorView::s2_update_text(const char*, uint16_t)	16	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:53:6:void sensorView::s3_update_text(const char*, uint16_t)	16	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:68:6:void sensorView::s4_update_text(const char*, uint16_t)	16	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:83:6:void sensorView::s5_update_text(const char*, uint16_t)	16	static

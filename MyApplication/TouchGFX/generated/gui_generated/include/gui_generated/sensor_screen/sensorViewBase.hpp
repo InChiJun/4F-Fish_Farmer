@@ -9,8 +9,10 @@
 #include <gui/sensor_screen/sensorPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <gui/containers/CustomContainer1.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Button.hpp>
 
 class sensorViewBase : public touchgfx::View<sensorPresenter>
 {
@@ -29,10 +31,22 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image background;
-    touchgfx::Image image1;
-    touchgfx::TextArea textArea1;
-    touchgfx::Image image2;
+    CustomContainer1 ex1;
+    CustomContainer1 ex2;
+    CustomContainer1 ex3;
+    CustomContainer1 ex4;
+    CustomContainer1 ex5;
+    touchgfx::TextArea temperature;
+    touchgfx::TextArea humidity;
+    touchgfx::TextArea ph;
+    touchgfx::TextArea tds;
+    touchgfx::TextArea level;
     touchgfx::TextAreaWithTwoWildcards text_temperature;
+    touchgfx::TextAreaWithTwoWildcards text_humidity;
+    touchgfx::TextAreaWithTwoWildcards text_ph;
+    touchgfx::TextAreaWithTwoWildcards text_tds;
+    touchgfx::TextAreaWithTwoWildcards text_level;
+    touchgfx::Button back_main_btn;
 
     /*
      * Wildcard Buffers
@@ -41,8 +55,34 @@ protected:
     touchgfx::Unicode::UnicodeChar text_temperatureBuffer1[TEXT_TEMPERATUREBUFFER1_SIZE];
     static const uint16_t TEXT_TEMPERATUREBUFFER2_SIZE = 3;
     touchgfx::Unicode::UnicodeChar text_temperatureBuffer2[TEXT_TEMPERATUREBUFFER2_SIZE];
+    static const uint16_t TEXT_HUMIDITYBUFFER1_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar text_humidityBuffer1[TEXT_HUMIDITYBUFFER1_SIZE];
+    static const uint16_t TEXT_HUMIDITYBUFFER2_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar text_humidityBuffer2[TEXT_HUMIDITYBUFFER2_SIZE];
+    static const uint16_t TEXT_PHBUFFER1_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar text_phBuffer1[TEXT_PHBUFFER1_SIZE];
+    static const uint16_t TEXT_PHBUFFER2_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar text_phBuffer2[TEXT_PHBUFFER2_SIZE];
+    static const uint16_t TEXT_TDSBUFFER1_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar text_tdsBuffer1[TEXT_TDSBUFFER1_SIZE];
+    static const uint16_t TEXT_TDSBUFFER2_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar text_tdsBuffer2[TEXT_TDSBUFFER2_SIZE];
+    static const uint16_t TEXT_LEVELBUFFER1_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar text_levelBuffer1[TEXT_LEVELBUFFER1_SIZE];
+    static const uint16_t TEXT_LEVELBUFFER2_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar text_levelBuffer2[TEXT_LEVELBUFFER2_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<sensorViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

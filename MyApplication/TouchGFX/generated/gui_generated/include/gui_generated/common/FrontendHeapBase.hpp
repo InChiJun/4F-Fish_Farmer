@@ -16,8 +16,10 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <gui/sensor_screen/sensorView.hpp>
 #include <gui/sensor_screen/sensorPresenter.hpp>
-#include <gui/screen1_screen/Screen1View.hpp>
-#include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/motor_screen/motorView.hpp>
+#include <gui/motor_screen/motorPresenter.hpp>
+#include <gui/config_screen/configView.hpp>
+#include <gui/config_screen/configPresenter.hpp>
 
 
 /**
@@ -42,8 +44,9 @@ public:
      */
     typedef touchgfx::meta::TypeList< MainView,
             touchgfx::meta::TypeList< sensorView,
-            touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< motorView,
+            touchgfx::meta::TypeList< configView,
+            touchgfx::meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
@@ -57,8 +60,9 @@ public:
      */
     typedef touchgfx::meta::TypeList< MainPresenter,
             touchgfx::meta::TypeList< sensorPresenter,
-            touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< motorPresenter,
+            touchgfx::meta::TypeList< configPresenter,
+            touchgfx::meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**

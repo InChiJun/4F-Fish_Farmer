@@ -13,8 +13,10 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <gui/sensor_screen/sensorView.hpp>
 #include <gui/sensor_screen/sensorPresenter.hpp>
-#include <gui/screen1_screen/Screen1View.hpp>
-#include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/motor_screen/motorView.hpp>
+#include <gui/motor_screen/motorPresenter.hpp>
+#include <gui/config_screen/configView.hpp>
+#include <gui/config_screen/configPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -58,4 +60,30 @@ void FrontendApplicationBase::gotosensorScreenNoTransition()
 void FrontendApplicationBase::gotosensorScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<sensorView, sensorPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// motor
+
+void FrontendApplicationBase::gotomotorScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotomotorScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotomotorScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<motorView, motorPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// config
+
+void FrontendApplicationBase::gotoconfigScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoconfigScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoconfigScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<configView, configPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

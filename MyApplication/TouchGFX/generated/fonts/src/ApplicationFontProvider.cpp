@@ -15,6 +15,9 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::T___SINGLEUSE_JOGG:
         // verdana_18_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[1]);
+    case Typography::LARGE:
+        // verdana_40_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
     default:
         return 0;
     }

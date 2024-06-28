@@ -24,21 +24,28 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:147:41:virtual const touchgfx::Unicode::UnicodeChar* touchgfx::TextAreaWithTwoWildcards::getWildcard1() const	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:166:41:virtual const touchgfx::Unicode::UnicodeChar* touchgfx::TextAreaWithTwoWildcards::getWildcard2() const	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<sensorPresenter>::~View()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:44:1:sensorViewBase::~sensorViewBase()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:49:6:virtual void sensorViewBase::setupScreen()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<sensorViewBase, const touchgfx::AbstractButton&>::~Callback()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:125:7:touchgfx::TextAreaWithTwoWildcards::~TextAreaWithTwoWildcards()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = sensorViewBase; T1 = const touchgfx::AbstractButton&]	2
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = sensorViewBase; T1 = const touchgfx::AbstractButton&]	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:125:7:virtual touchgfx::TextAreaWithTwoWildcards::~TextAreaWithTwoWildcards()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<sensorViewBase, const touchgfx::AbstractButton&>::~Callback()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<sensorPresenter>::~View()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:44:1:virtual sensorViewBase::~sensorViewBase()	1
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:132:6:virtual void sensorViewBase::setupScreen()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	1
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:141:6:void sensorViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:49:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	1
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:50:5:touchgfx::Image::Image(const touchgfx::Bitmap&)	1
+../../TouchGFX/gui/include/gui/containers/CustomContainer1.hpp:10:13:CustomContainer1::~CustomContainer1()	1
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:127:1:sensorViewBase::~sensorViewBase()	1
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:127:1:virtual sensorViewBase::~sensorViewBase()	1
+../../TouchGFX/gui/include/gui/containers/CustomContainer1.hpp:10:13:virtual CustomContainer1::~CustomContainer1()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:9:1:sensorViewBase::sensorViewBase()	3
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:128:5:touchgfx::TextAreaWithTwoWildcards::TextAreaWithTwoWildcards()	1
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/sensor_screen/sensorViewBase.cpp:9:1:sensorViewBase::sensorViewBase()	19

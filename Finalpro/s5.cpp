@@ -2,14 +2,14 @@
 #include <Arduino.h>
 
 SZH::SZH() {
+
+}
+
+void SZH::begin() {
     this->level = 0.0f;
     this->high_depth = 0.0f;
     this->low_depth = 0.0f;
     this->current_depth = 0.0f;
-}
-
-void SZH::begin() {
-    // 필요한 초기화 코드를 여기에 추가합니다.
 }
 
 float SZH::water_level() {

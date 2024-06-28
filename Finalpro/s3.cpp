@@ -2,6 +2,11 @@
 
 Phsensor::Phsensor()
 {
+
+}
+
+void Phsensor::begin()
+{
     pinMode(A0, INPUT);
     pinMode(A1, OUTPUT);
     this->ph = 0.0f;

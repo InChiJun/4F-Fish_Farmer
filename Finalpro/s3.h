@@ -6,6 +6,7 @@
 class Phsensor{
 public:
     Phsensor();
+    void begin();
     float get_Ph();
     void set_Ph_alarm(float low_ph, float high_ph);
     uint8_t get_alarm();

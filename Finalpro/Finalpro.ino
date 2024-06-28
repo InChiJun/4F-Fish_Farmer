@@ -1,5 +1,3 @@
-
-// wifi-mqtt 설정
 #include "WiFi.h"
 #include "ArduinoMqttClient.h"
 #include "s1.h"

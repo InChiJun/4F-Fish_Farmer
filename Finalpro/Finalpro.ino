@@ -7,9 +7,9 @@
 #include "s5.h"
 
 
-char ssid[] = "IOTA_24G";
+char ssid[] = "IOTB_24G";
 char pass[] = "kosta90009";
-char broker[] = "10.10.10.19";    // 열려 있는 포트의 IP 주소를 입력해야 함
+char broker[] = "10.10.20.7";    // 열려 있는 포트의 IP 주소를 입력해야 함
 int port = 1883; // admin에서 설정한 port
 
 char p_topic1[] =   "sensor/value/Sensor1"; 
@@ -41,13 +41,14 @@ void setup()
     s3.begin();
     //s4.begin();
     s5.begin();
+
     while(WiFi.begin(ssid, pass) != WL_CONNECTED)
     {
         Serial.print(".");
         delay(5000);
     }
     delay(1000);
-    
+
     while(mqttClient.connect(broker, port) == 0)
     {
         Serial.println(mqttClient.connectError());
@@ -60,7 +61,7 @@ void setup()
         }
         delay(1000);
     }
-    
+
   mqttClient.onMessage(onMqttMessage);
 
   Serial.print("Subscribing to topic: ");
@@ -75,28 +76,25 @@ void setup()
 
 void loop()
 {
-    mqttClient.beginMessage(p_topic1); // 특정 주제 선정
+    mqttClient.beginMessage(p_topic1); 
     mqttClient.print(s1.getTemperature());
     Serial.print(mqttClient.endMessage());
     
-
-    mqttClient.beginMessage(p_topic2); // 특정 주제 선정
+    mqttClient.beginMessage(p_topic2); 
     mqttClient.print(s2.getHumidity());
     Serial.print(mqttClient.endMessage());
 
-    mqttClient.beginMessage(p_topic3); // 특정 주제 선정
+    mqttClient.beginMessage(p_topic3);
     mqttClient.print(s3.get_Ph());
     Serial.print(mqttClient.endMessage());
 
-    mqttClient.beginMessage(p_topic4); // 특정 주제 선정
+    mqttClient.beginMessage(p_topic4); 
     mqttClient.print(s1.getTemperature());
     Serial.print(mqttClient.endMessage());
 
-    mqttClient.beginMessage(p_topic5); // 특정 주제 선정
+    mqttClient.beginMessage(p_topic5); 
     mqttClient.print(s5.water_level());
     Serial.print(mqttClient.endMessage());
-
-    
 
     delay(1000);
 }

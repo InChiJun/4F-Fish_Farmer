@@ -7,8 +7,8 @@ Phsensor::Phsensor()
 
 void Phsensor::begin()
 {
-    pinMode(A0, INPUT);
-    pinMode(A1, OUTPUT);
+    pinMode(7, INPUT);
+    pinMode(6, OUTPUT);
     this->ph = 0.0f;
     this->low_ph = 0.0f;
     this->high_ph = 0.0f;

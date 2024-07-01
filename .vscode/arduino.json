@@ -1,6 +1,4 @@
 {
-    "sketch": "Finalpro/Finalpro.ino",
     "board": "arduino:renesas_uno:unor4wifi",
-    "port": "/dev/ttyACM0",
-    "programmer": "cmsis-dap"
+    "port": "/dev/ttyACM0"
 }

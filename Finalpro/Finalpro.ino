@@ -29,7 +29,7 @@ MqttClient mqttClient(wifiClient);
 Thermal s1;
 AHT20 s2;
 Phsensor s3;
-//TDS s4;
+TDS s4;
 SZH s5;
 
 void setup() {
@@ -37,7 +37,7 @@ void setup() {
     s1.begin(30.0, 10.0);
     s2.begin();
     s3.begin();
-    //s4.begin();
+    s4.begin();
     s5.begin();
 
     connectWiFi();
@@ -84,7 +84,7 @@ void sendDataToMQTT() {
     delay(1000);
     sendMQTTMessage(p_topic3, String(s3.get_Ph()));
     delay(1000);
-    sendMQTTMessage(p_topic4, String(s1.getTemperature())); // 중복된 데이터 전송 확인 필요
+    sendMQTTMessage(p_topic4, String(s4.readTDS(s1.getTemperature()))); // 중복된 데이터 전송 확인 필요
     delay(1000);
     sendMQTTMessage(p_topic5, String(s5.water_level()));
     delay(1000);

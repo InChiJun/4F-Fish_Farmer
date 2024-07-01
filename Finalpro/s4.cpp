@@ -1,6 +1,10 @@
 #include "s4.h"
 
+// 매개변수 있는 생성자 구현
 TDS::TDS(uint8_t pin, float vref) : _pin(pin), _vref(vref) {}
+
+// 기본 생성자 구현
+TDS::TDS() : _pin(0), _vref(5.0) {}
 
 void TDS::begin() {
     pinMode(_pin, INPUT);
@@ -40,3 +44,6 @@ float TDS::getMedianNum(int *arr, int size) {
         return arr[size / 2];
     }
 }
+
+
+

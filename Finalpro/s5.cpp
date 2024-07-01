@@ -13,7 +13,7 @@ void SZH::begin() {
 }
 
 float SZH::water_level() {
-    int sensor_value = analogRead(A0);
+    int sensor_value = analogRead(A1);
     level = map(sensor_value, 0, 1023, 0, 100);
     return level;
 }

@@ -4,14 +4,19 @@
 #include <Arduino.h>
 
 class TDS {
-    public:
-        TDS(uint8_t pin, float vref = 5.0);
-        void begin();
-        float readTDS(float temperature);
+public:
+    // 매개변수 있는 생성자
+    TDS(uint8_t pin, float vref);
+    // 기본 생성자 추가
+    TDS();
 
-    private:
-        uint8_t _pin;
-        float _vref;
-        float getMedianNum(int *arr, int size);
+    void begin();
+    float readTDS(float temperature);
+
+private:
+    uint8_t _pin;
+    float _vref;
+    float getMedianNum(int *arr, int size);
 };
+
 #endif

@@ -40,6 +40,11 @@ void setup() {
     s4.begin();
     s5.begin();
 
+    s1.set_alarm_temp(30.0, 10.0);
+    s2.set_alarm_humidity(80.0, 20.0);
+    s3.set_Ph_alarm(0.0, 14.0);
+    s5.set_alarm_depth(20.0, 0.0);
+
     connectWiFi();
     connectMQTT();
 
@@ -51,6 +56,7 @@ void loop() {
     if (!mqttClient.connected()) {
         connectMQTT();
     }
+    mqttClient.poll(); // 메시지 폴링 추가
 
     sendDataToMQTT();
     delay(3000); // 전체 데이터를 보내는 루프에 대한 지연 시간
@@ -73,8 +79,8 @@ void connectMQTT() {
     }
 
     Serial.print("Subscribing to topic: ");
-    Serial.println(p_topic1);
-    mqttClient.subscribe(p_topic1);
+    Serial.println("example/temperature");
+    mqttClient.subscribe("example/temperature");
 }
 
 void sendDataToMQTT() {
@@ -84,7 +90,7 @@ void sendDataToMQTT() {
     delay(1000);
     sendMQTTMessage(p_topic3, String(s3.get_Ph()));
     delay(1000);
-    sendMQTTMessage(p_topic4, String(s4.readTDS(s1.getTemperature()))); // 중복된 데이터 전송 확인 필요
+    sendMQTTMessage(p_topic4, String(s4.readTDS(s1.getTemperature())));
     delay(1000);
     sendMQTTMessage(p_topic5, String(s5.water_level()));
     delay(1000);
@@ -109,5 +115,20 @@ void sendMQTTMessage(const char* topic, const String& payload) {
 }
 
 void onMqttMessage(int messageSize) {
-    // 메시지 처리 콜백 (필요시 구현)
+    // 메시지 처리 콜백
+    Serial.print("Received a message with topic '");
+    Serial.print(mqttClient.messageTopic());
+    Serial.print("', length ");
+    Serial.println(messageSize);
+
+    // 메시지 내용을 읽어서 시리얼로 출력
+    char payload[messageSize + 1]; // payload 크기 + null terminator
+    int i = 0;
+    while (mqttClient.available()) {
+        payload[i++] = mqttClient.read();
+    }
+    payload[i] = '\0'; // null terminator 추가
+
+    Serial.print("Payload: ");
+    Serial.println(payload);
 }

@@ -5,6 +5,7 @@
 #include "s3.h"
 #include "s4.h"
 #include "s5.h"
+#include "fan.h"
 
 char ssid[] = "IOTB_24G";
 char pass[] = "kosta90009";
@@ -14,7 +15,7 @@ int port = 1883; // admin에서 설정한 port
 char p_topic1[] = "sensor/value/Sensor1"; 
 char p_topic2[] = "sensor/value/Sensor2"; 
 char p_topic3[] = "sensor/value/Sensor3"; 
-char p_topic4[] = "sensor/value/Sensor4"; 
+char p_topic4[] = "sensor/value/Sensor4";
 char p_topic5[] = "sensor/value/Sensor5"; 
 
 char p_topic6[] = "sensor/alarm/Sensor1";
@@ -31,6 +32,7 @@ AHT20 s2;
 Phsensor s3;
 TDS s4;
 SZH s5;
+fan myfan;
 
 void setup() {
     Serial.begin(115200);
@@ -39,6 +41,7 @@ void setup() {
     s3.begin();
     s4.begin();
     s5.begin();
+    myfan.begin();
 
     connectWiFi();
     connectMQTT();
@@ -54,6 +57,9 @@ void loop() {
 
     sendDataToMQTT();
     delay(3000); // 전체 데이터를 보내는 루프에 대한 지연 시간
+    float humidity = s2.getHumidity();
+    myfan.control_based_on_s2(humidity);
+
 }
 
 void connectWiFi() {
@@ -89,6 +95,8 @@ void sendDataToMQTT() {
     sendMQTTMessage(p_topic5, String(s5.water_level()));
     delay(1000);
 }
+
+
 
 void sendMQTTMessage(const char* topic, const String& payload) {
     if (mqttClient.beginMessage(topic)) {

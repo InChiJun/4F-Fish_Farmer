@@ -1,5 +1,5 @@
 Application/User/gui/sensorPresenter.o: \
- C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorPresenter.cpp \
+ C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorPresenter.cpp \
  ../../TouchGFX/gui/include/gui/sensor_screen/sensorView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/sensor_screen/sensorViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

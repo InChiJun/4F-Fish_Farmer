@@ -1,5 +1,5 @@
 Application/User/generated/configViewBase.o: \
- C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/config_screen/configViewBase.cpp \
+ C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/gui_generated/src/config_screen/configViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/config_screen/configViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

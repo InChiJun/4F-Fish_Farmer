@@ -14,7 +14,6 @@ public:
     void update_text(const uint8_t* data, uint16_t size);
 protected:
     int tickCounter;
-
     void handleTickEvent();
 
 };

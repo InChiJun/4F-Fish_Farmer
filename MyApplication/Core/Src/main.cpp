@@ -848,7 +848,7 @@ void BLE_Task(void *argument)
   for(;;)
   {
 
-	  HAL_UART_Receive_IT(&huart7, (uint8_t *)&bt.rx_buffer[bt.rx_index], 1);
+	//HAL_UART_Receive_IT(&huart7, (uint8_t *)&bt.rx_buffer[bt.rx_index], 1);
     osDelay(25);
   }
   /* USER CODE END BLE_Task */

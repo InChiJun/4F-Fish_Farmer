@@ -22,9 +22,7 @@ void Bluetooth_init(Bluetooth* bt, UART_HandleTypeDef* huart, void (*rx_callback
     huart->Init.OverSampling = UART_OVERSAMPLING_16;
     if (HAL_UART_Init(huart) != HAL_OK) {
         // 초기화 오류 처리
-        // 오류 처리 코드 추가
     }
-
     // UART 인터럽트 활성화
     HAL_NVIC_SetPriority(UART7_IRQn, 0, 1);
     HAL_NVIC_EnableIRQ(UART7_IRQn);
@@ -36,37 +34,25 @@ void Bluetooth_init(Bluetooth* bt, UART_HandleTypeDef* huart, void (*rx_callback
 
 void Bluetooth_write_data(Bluetooth* bt, uint8_t* data, uint16_t size) {
     bt->tx_complete = 0; // 전송 완료 플래그 초기화
-#if 0
-    if (HAL_UART_Transmit_IT(bt->huart, data, size) != HAL_OK) {
-#else
     if (HAL_UART_Transmit(bt->huart, data, size, -1) != HAL_OK) {
-#endif
         // 전송 오류 처리
         	while(1){
             // 오류 처리 루프
         	}
     }
-
 }
 
 // 전송 완료 콜백 함수
-
-
 void Bluetooth_handle_rx_interrupt(Bluetooth* bt) {
     // 버퍼 오버플로 방지
     if (bt->rx_index >= sizeof(bt->rx_buffer)) {
         bt->rx_index = 0;
     }
-
-    // 수신된 문자가 '\n'일 경우, 이전 문자가 '\r'인지 확인
     if (bt->rx_buffer[bt->rx_index]  == '\n' && bt->rx_buffer[bt->rx_index - 1] == '\r') {
         // 수신된 데이터를 콜백으로 전달
         if (bt->bluetooth_rx_callback) {
             bt->bluetooth_rx_callback(bt->rx_buffer, bt->rx_index);
         }
-        //bt->rx_index = -1;
-        //memset(bt->rx_buffer,0,256);
-        //HAL_UART_Receive_IT(bt->huart, (uint8_t *)&bt->rx_buffer[bt->rx_index], 1);
     }
     else
     {

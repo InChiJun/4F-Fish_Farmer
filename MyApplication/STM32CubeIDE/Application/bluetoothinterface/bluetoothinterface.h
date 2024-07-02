@@ -8,7 +8,6 @@
 extern "C" {
 #endif
 
-
 typedef struct {
     UART_HandleTypeDef* huart;
     uint8_t rx_buffer[256];

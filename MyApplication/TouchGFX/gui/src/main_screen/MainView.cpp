@@ -2,13 +2,6 @@
 #include <math.h>
 #include <stdlib.h>
 
-static uint16_t randomish(int32_t seed)
-{
-    static uint16_t last = 0;
-    const uint16_t num = (seed * (1337 + last)) % 0xFFFF;
-    last = num;
-    return num;
-}
 
 MainView::MainView()
 {
@@ -44,12 +37,3 @@ void MainView::handleTickEvent()
 }
 
 
-void MainView::update_text(const uint8_t* data, uint16_t size)
-{
-	Unicode::UnicodeChar ch_data[256];
-	for(int i =size ; i>0; i--)
-	{
-		ch_data[i]= data[i];
-	}
-
-}

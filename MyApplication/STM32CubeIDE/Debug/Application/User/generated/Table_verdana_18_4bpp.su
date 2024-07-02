@@ -1,2 +1,2 @@
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/generated/fonts/src/Table_verdana_18_4bpp.cpp:59:168:void __tcf_0()	0	static
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/generated/fonts/src/Table_verdana_18_4bpp.cpp:57:26:touchgfx::GeneratedFont& getFont_verdana_18_4bpp()	72	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/fonts/src/Table_verdana_18_4bpp.cpp:59:168:void __tcf_0()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/generated/fonts/src/Table_verdana_18_4bpp.cpp:57:26:touchgfx::GeneratedFont& getFont_verdana_18_4bpp()	72	static

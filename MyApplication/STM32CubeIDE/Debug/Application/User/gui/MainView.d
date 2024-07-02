@@ -1,5 +1,5 @@
 Application/User/gui/MainView.o: \
- C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/main_screen/MainView.cpp \
+ C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/main_screen/MainView.cpp \
  ../../TouchGFX/gui/include/gui/main_screen/MainView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/main_screen/MainViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

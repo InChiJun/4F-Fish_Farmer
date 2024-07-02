@@ -1,5 +1,5 @@
 Application/User/gui/Model.o: \
- C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp \
+ C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp \
  ../../TouchGFX/gui/include/gui/model/Model.hpp ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
@@ -40,7 +40,7 @@ Application/User/gui/Model.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
- C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h \
+ C:/test/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
@@ -93,7 +93,7 @@ Application/User/gui/Model.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h:
+C:/test/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../../Core/Inc/FreeRTOSConfig.h:

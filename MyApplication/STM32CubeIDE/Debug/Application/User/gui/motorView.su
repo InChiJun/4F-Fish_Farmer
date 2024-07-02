@@ -1,13 +1,13 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:20:6:virtual void motorView::tearDownScreen()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:20:6:virtual void motorView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp:11:13:motorView::~motorView()	8	static
 ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp:11:13:virtual motorView::~motorView()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:142:14:touchgfx::BitmapId touchgfx::Bitmap::getId() const	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:58:10:bool touchgfx::ToggleButton::getState() const	16	static
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:25:6:virtual void motorView::air_button_click()	8	static
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:31:6:virtual void motorView::water_button_click()	8	static
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:37:6:virtual void motorView::led_button_click()	8	static
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:6:1:motorView::motorView()	8	static
-C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:14:6:virtual void motorView::setupScreen()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:25:6:virtual void motorView::air_button_click()	8	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:31:6:virtual void motorView::water_button_click()	8	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:37:6:virtual void motorView::led_button_click()	8	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:6:1:motorView::motorView()	8	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:14:6:virtual void motorView::setupScreen()	0	static

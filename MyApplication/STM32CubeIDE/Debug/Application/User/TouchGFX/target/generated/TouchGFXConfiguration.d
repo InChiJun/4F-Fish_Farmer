@@ -109,6 +109,7 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/motor_screen/motorViewBase.hpp \
  ../../TouchGFX/gui/include/gui/motor_screen/motorPresenter.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
  ../../TouchGFX/gui/include/gui/config_screen/configView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/config_screen/configViewBase.hpp \
  ../../TouchGFX/gui/include/gui/config_screen/configPresenter.hpp \
@@ -230,6 +231,7 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/motor_screen/motorViewBase.hpp:
 ../../TouchGFX/gui/include/gui/motor_screen/motorPresenter.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
 ../../TouchGFX/gui/include/gui/config_screen/configView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/config_screen/configViewBase.hpp:
 ../../TouchGFX/gui/include/gui/config_screen/configPresenter.hpp:

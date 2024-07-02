@@ -1,3 +1,4 @@
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp:7:1:Model::Model()	0	static
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp:12:6:void Model::tick()	0	static
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp:17:6:void Model::push_button()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp:15:1:Model::Model()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp:20:6:void Model::tick()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp:25:6:void Model::clicked_button()	0	static
+C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/model/Model.cpp:32:6:void Model::send_blue()	8	static

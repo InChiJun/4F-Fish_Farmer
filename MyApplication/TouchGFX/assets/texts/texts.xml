@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_CHE4" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
+        <Translation Language="GB">water motor</Translation>
+      </Text>
+      <Text Id="__SingleUse_3XZ2" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
+        <Translation Language="GB">led</Translation>
+      </Text>
+      <Text Id="__SingleUse_VK8P" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
+        <Translation Language="GB">air motor</Translation>
+      </Text>
       <Text Id="__SingleUse_5Q27" Alignment="Center" TypographyId="large">
         <Translation Language="GB">4F_Fish_Farmer</Translation>
       </Text>

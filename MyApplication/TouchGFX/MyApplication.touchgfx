@@ -420,7 +420,7 @@
             "Name": "background",
             "Width": 480,
             "Height": 272,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_gradient_dark.png"
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_gradient_light.png"
           },
           {
             "Type": "Button",
@@ -432,6 +432,102 @@
             "Pressed": "back50.png",
             "Released": "back50.png",
             "Alpha": 150
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "air_btn",
+            "X": 275,
+            "Y": 28,
+            "Width": 138,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_normal.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "water_btn",
+            "X": 275,
+            "Y": 108,
+            "Width": 138,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_normal.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "led_btn",
+            "X": 275,
+            "Y": 188,
+            "Width": 138,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_normal.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "air_back",
+            "X": 85,
+            "Y": 25,
+            "Width": 130,
+            "Height": 56,
+            "RelativeFilename": "button_released.png",
+            "Alpha": 150
+          },
+          {
+            "Type": "Image",
+            "Name": "water_back",
+            "X": 85,
+            "Y": 105,
+            "Width": 130,
+            "Height": 56,
+            "RelativeFilename": "button_released.png",
+            "Alpha": 150
+          },
+          {
+            "Type": "Image",
+            "Name": "led_back",
+            "X": 85,
+            "Y": 185,
+            "Width": 130,
+            "Height": 56,
+            "RelativeFilename": "button_released.png",
+            "Alpha": 150
+          },
+          {
+            "Type": "TextArea",
+            "Name": "air_motor",
+            "X": 108,
+            "Y": 40,
+            "Width": 85,
+            "Height": 22,
+            "TextId": "__SingleUse_VK8P",
+            "TextRotation": "0",
+            "Alpha": 150,
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "led",
+            "X": 138,
+            "Y": 202,
+            "Width": 27,
+            "Height": 22,
+            "TextId": "__SingleUse_3XZ2",
+            "TextRotation": "0",
+            "Alpha": 150,
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "water_motor",
+            "X": 94,
+            "Y": 121,
+            "Width": 113,
+            "Height": 22,
+            "TextId": "__SingleUse_CHE4",
+            "TextRotation": "0",
+            "Alpha": 150,
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -445,6 +541,38 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Main"
+            }
+          },
+          {
+            "InteractionName": "air_motor",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "air_btn"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode"
+            }
+          },
+          {
+            "InteractionName": "water_motor",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "water_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function2"
+            }
+          },
+          {
+            "InteractionName": "led",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "led_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function3"
             }
           }
         ]

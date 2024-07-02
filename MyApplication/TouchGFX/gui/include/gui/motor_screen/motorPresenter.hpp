@@ -26,7 +26,7 @@ public:
     virtual void deactivate();
 
     virtual ~motorPresenter() {}
-
+    virtual void setstate(bool state);
 private:
     motorPresenter();
 

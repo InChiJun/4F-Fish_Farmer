@@ -771,6 +771,36 @@ void push_bt_button(void){
 	 osMutexRelease(bluMutexHandle);
 }
 
+void send_turnoff_air(void)
+{
+	uint8_t data_[] = "M10000";
+	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
+}
+void send_turnon_air(void)
+{
+	uint8_t data_[] = "M10001";
+	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
+}
+void send_turnoff_water(void)
+{
+	uint8_t data_[] = "M20000";
+	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
+}
+void send_turnon_water(void)
+{
+	uint8_t data_[] = "M20001";
+	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
+}
+void send_turnoff_led(void)
+{
+	uint8_t data_[] = "M30000";
+	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
+}
+void send_turnon_led(void)
+{
+	uint8_t data_[] = "M30001";
+	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
+}
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */

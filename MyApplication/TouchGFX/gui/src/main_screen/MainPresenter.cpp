@@ -20,9 +20,9 @@ void MainPresenter::deactivate()
 
 }
 
-void MainPresenter::con_sh_bc()
+void MainPresenter::call_air()
 {
-	model->push_button();
+	model->clicked_button_air();
 }
 
 void MainPresenter::tick()

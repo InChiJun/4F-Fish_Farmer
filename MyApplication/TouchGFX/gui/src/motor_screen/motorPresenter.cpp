@@ -16,3 +16,15 @@ void motorPresenter::deactivate()
 {
 
 }
+
+void motorPresenter::setstate(bool state)
+{
+	if(state == 1)
+	{
+		model->send_blue();
+	}
+	else
+	{
+		model->send_blue();
+	}
+}

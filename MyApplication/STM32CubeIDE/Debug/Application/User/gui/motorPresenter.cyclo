@@ -1,6 +1,8 @@
 ../../TouchGFX/gui/include/gui/motor_screen/motorPresenter.hpp:28:13:motorPresenter::~motorPresenter()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:10:6:virtual void motorPresenter::activate()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:10:6:virtual void motorPresenter::activate()	1
 ../../TouchGFX/gui/include/gui/motor_screen/motorPresenter.hpp:28:13:virtual motorPresenter::~motorPresenter()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:20:6:virtual void motorPresenter::setstate(bool)	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:44:6:virtual void motorPresenter::led_setstate(bool)	2
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:32:6:virtual void motorPresenter::water_setstate(bool)	2
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:20:6:virtual void motorPresenter::air_setstate(bool)	2
 ../../TouchGFX/gui/include/gui/motor_screen/motorPresenter.hpp:28:13:virtual void* motorPresenter::_ZThn4_N14motorPresenterD1Ev()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:4:1:motorPresenter::motorPresenter(motorView&)	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorPresenter.cpp:4:1:motorPresenter::motorPresenter(motorView&)	1

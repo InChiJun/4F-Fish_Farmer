@@ -67,53 +67,43 @@ sensorViewBase::sensorViewBase() :
     level.setAlpha(150);
     add(level);
 
-    text_temperature.setPosition(140, 85, 50, 25);
+    text_temperature.setPosition(104, 85, 122, 25);
     text_temperature.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     text_temperature.setLinespacing(0);
-    touchgfx::Unicode::snprintf(text_temperatureBuffer1, TEXT_TEMPERATUREBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7798).getText());
-    text_temperature.setWildcard1(text_temperatureBuffer1);
-    touchgfx::Unicode::snprintf(text_temperatureBuffer2, TEXT_TEMPERATUREBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_IQT9).getText());
-    text_temperature.setWildcard2(text_temperatureBuffer2);
+    Unicode::snprintf(text_temperatureBuffer, TEXT_TEMPERATURE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7798).getText());
+    text_temperature.setWildcard(text_temperatureBuffer);
     text_temperature.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MTPN));
     add(text_temperature);
 
-    text_humidity.setPosition(290, 85, 50, 25);
+    text_humidity.setPosition(250, 85, 126, 25);
     text_humidity.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     text_humidity.setLinespacing(0);
-    touchgfx::Unicode::snprintf(text_humidityBuffer1, TEXT_HUMIDITYBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_F69V).getText());
-    text_humidity.setWildcard1(text_humidityBuffer1);
-    touchgfx::Unicode::snprintf(text_humidityBuffer2, TEXT_HUMIDITYBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_W9Z7).getText());
-    text_humidity.setWildcard2(text_humidityBuffer2);
+    Unicode::snprintf(text_humidityBuffer, TEXT_HUMIDITY_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_F69V).getText());
+    text_humidity.setWildcard(text_humidityBuffer);
     text_humidity.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D9RX));
     add(text_humidity);
 
-    text_ph.setPosition(65, 215, 50, 25);
+    text_ph.setPosition(29, 215, 126, 25);
     text_ph.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     text_ph.setLinespacing(0);
-    touchgfx::Unicode::snprintf(text_phBuffer1, TEXT_PHBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LXQ5).getText());
-    text_ph.setWildcard1(text_phBuffer1);
-    touchgfx::Unicode::snprintf(text_phBuffer2, TEXT_PHBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_0F5D).getText());
-    text_ph.setWildcard2(text_phBuffer2);
+    Unicode::snprintf(text_phBuffer, TEXT_PH_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LXQ5).getText());
+    text_ph.setWildcard(text_phBuffer);
     text_ph.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WQQ5));
     add(text_ph);
 
-    text_tds.setPosition(215, 215, 50, 25);
+    text_tds.setPosition(181, 215, 120, 25);
     text_tds.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     text_tds.setLinespacing(0);
-    touchgfx::Unicode::snprintf(text_tdsBuffer1, TEXT_TDSBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_PYMH).getText());
-    text_tds.setWildcard1(text_tdsBuffer1);
-    touchgfx::Unicode::snprintf(text_tdsBuffer2, TEXT_TDSBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_K2TB).getText());
-    text_tds.setWildcard2(text_tdsBuffer2);
+    Unicode::snprintf(text_tdsBuffer, TEXT_TDS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_PYMH).getText());
+    text_tds.setWildcard(text_tdsBuffer);
     text_tds.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EHW8));
     add(text_tds);
 
-    text_level.setPosition(366, 215, 50, 25);
+    text_level.setPosition(331, 215, 119, 25);
     text_level.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     text_level.setLinespacing(0);
-    touchgfx::Unicode::snprintf(text_levelBuffer1, TEXT_LEVELBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_Z25Q).getText());
-    text_level.setWildcard1(text_levelBuffer1);
-    touchgfx::Unicode::snprintf(text_levelBuffer2, TEXT_LEVELBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7RKY).getText());
-    text_level.setWildcard2(text_levelBuffer2);
+    Unicode::snprintf(text_levelBuffer, TEXT_LEVEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_Z25Q).getText());
+    text_level.setWildcard(text_levelBuffer);
     text_level.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I690));
     add(text_level);
 

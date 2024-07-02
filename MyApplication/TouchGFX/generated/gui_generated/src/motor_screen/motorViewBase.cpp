@@ -23,20 +23,6 @@ motorViewBase::motorViewBase() :
     back_main_btn.setAction(buttonCallback);
     add(back_main_btn);
 
-    air_btn.setXY(275, 28);
-    air_btn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_LIGHT_ID));
-    add(air_btn);
-
-    water_btn.setXY(275, 108);
-    water_btn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_LIGHT_ID));
-    water_btn.setAction(buttonCallback);
-    add(water_btn);
-
-    led_btn.setXY(275, 188);
-    led_btn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_LIGHT_ID));
-    led_btn.setAction(buttonCallback);
-    add(led_btn);
-
     air_back.setXY(85, 25);
     air_back.setBitmap(touchgfx::Bitmap(BITMAP_BUTTON_RELEASED_ID));
     air_back.setAlpha(150);
@@ -72,6 +58,21 @@ motorViewBase::motorViewBase() :
     water_motor.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CHE4));
     water_motor.setAlpha(150);
     add(water_motor);
+
+    air_button.setXY(274, 28);
+    air_button.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
+    air_button.setAction(buttonCallback);
+    add(air_button);
+
+    water_button.setXY(274, 105);
+    water_button.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
+    water_button.setAction(buttonCallback);
+    add(water_button);
+
+    led_button.setXY(274, 188);
+    led_button.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));
+    led_button.setAction(buttonCallback);
+    add(led_button);
 }
 
 motorViewBase::~motorViewBase()
@@ -93,18 +94,25 @@ void motorViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //Go to Main with no screen transition
         application().gotoMainScreenNoTransition();
     }
-    if (&src == &water_btn)
+    if (&src == &air_button)
     {
-        //water_motor
-        //When water_btn clicked call virtual function
-        //Call function2
-        function2();
+        //Interaction1
+        //When air_button clicked call virtual function
+        //Call air_button_click
+        air_button_click();
     }
-    if (&src == &led_btn)
+    if (&src == &water_button)
     {
-        //led
-        //When led_btn clicked call virtual function
-        //Call function3
-        function3();
+        //Interaction2
+        //When water_button clicked call virtual function
+        //Call water_button_click
+        water_button_click();
+    }
+    if (&src == &led_button)
+    {
+        //Interaction3
+        //When led_button clicked call virtual function
+        //Call led_button_click
+        led_button_click();
     }
 }

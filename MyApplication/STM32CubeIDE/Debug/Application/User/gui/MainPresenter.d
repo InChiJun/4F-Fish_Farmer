@@ -1,5 +1,5 @@
 Application/User/gui/MainPresenter.o: \
- C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/main_screen/MainPresenter.cpp \
+ C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/main_screen/MainPresenter.cpp \
  ../../TouchGFX/gui/include/gui/main_screen/MainView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/main_screen/MainViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
@@ -92,7 +92,7 @@ Application/User/gui/MainPresenter.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- C:/test/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h \
+ C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
@@ -197,7 +197,7 @@ Application/User/gui/MainPresenter.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
-C:/test/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h:
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/STM32CubeIDE/Application/bluetoothinterface/bluetoothinterface.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../../Core/Inc/FreeRTOSConfig.h:

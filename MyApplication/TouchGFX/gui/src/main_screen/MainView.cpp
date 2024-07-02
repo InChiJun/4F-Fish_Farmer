@@ -43,15 +43,6 @@ void MainView::handleTickEvent()
     }
 }
 
-void MainView::sliderValueChanged(int value)
-{
-
-}
-
-void MainView::send_hello()
-{
-	presenter->con_sh_bc();
-}
 
 void MainView::update_text(const uint8_t* data, uint16_t size)
 {
@@ -60,7 +51,5 @@ void MainView::update_text(const uint8_t* data, uint16_t size)
 	{
 		ch_data[i]= data[i];
 	}
-    /*Unicode::strncpy(textArea1Buffer, ch_data, size);
-    textArea1Buffer[size] = '\0'; // Null termination
-    textArea1.invalidate(); // 화면 갱신*/
+
 }

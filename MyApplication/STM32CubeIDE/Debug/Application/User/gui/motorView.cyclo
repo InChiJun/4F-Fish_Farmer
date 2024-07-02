@@ -1,19 +1,13 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-../../TouchGFX/generated/gui_generated/include/gui_generated/motor_screen/motorViewBase.hpp:26:18:virtual void motorViewBase::function2()	1
-../../TouchGFX/generated/gui_generated/include/gui_generated/motor_screen/motorViewBase.hpp:30:18:virtual void motorViewBase::function3()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:22:6:virtual void motorView::tearDownScreen()	1
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<motorView, const touchgfx::AbstractButton&>::~Callback()	1
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = motorView; T1 = const touchgfx::AbstractButton&]	2
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = motorView; T1 = const touchgfx::AbstractButton&]	3
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<motorView, const touchgfx::AbstractButton&>::~Callback()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:20:6:virtual void motorView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp:11:13:motorView::~motorView()	1
 ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp:11:13:virtual motorView::~motorView()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:142:14:touchgfx::BitmapId touchgfx::Bitmap::getId() const	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:58:10:bool touchgfx::ToggleButton::getState() const	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:6:1:motorView::motorView()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:27:6:void motorView::airButtonClicked(const touchgfx::AbstractButton&)	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:33:6:void motorView::waterButtonClicked(const touchgfx::AbstractButton&)	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:39:6:void motorView::ledButtonClicked(const touchgfx::AbstractButton&)	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:14:6:virtual void motorView::setupScreen()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:25:6:virtual void motorView::air_button_click()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:31:6:virtual void motorView::water_button_click()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:37:6:virtual void motorView::led_button_click()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:6:1:motorView::motorView()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp:14:6:virtual void motorView::setupScreen()	1

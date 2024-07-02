@@ -1,4 +1,4 @@
-../Application/bluetoothinterface/bluetoothinterface.c:7:6:Bluetooth_init	16	static
+../Application/bluetoothinterface/bluetoothinterface.c:7:6:Bluetooth_init	24	static
 ../Application/bluetoothinterface/bluetoothinterface.c:37:6:Bluetooth_write_data	8	static
-../Application/bluetoothinterface/bluetoothinterface.c:55:6:Bluetooth_handle_rx_interrupt	8	static
-../Application/bluetoothinterface/bluetoothinterface.c:75:6:UART7_IRQHandler	0	static
+../Application/bluetoothinterface/bluetoothinterface.c:55:6:Bluetooth_handle_rx_interrupt	0	static
+../Application/bluetoothinterface/bluetoothinterface.c:79:6:UART7_IRQHandler	0	static

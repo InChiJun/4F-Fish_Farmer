@@ -26,7 +26,6 @@ public:
     virtual void deactivate();
 
     virtual ~MainPresenter() {};
-    virtual void call_air();
 private:
     MainPresenter();
 

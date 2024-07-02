@@ -41,36 +41,26 @@ protected:
     touchgfx::TextArea ph;
     touchgfx::TextArea tds;
     touchgfx::TextArea level;
-    touchgfx::TextAreaWithTwoWildcards text_temperature;
-    touchgfx::TextAreaWithTwoWildcards text_humidity;
-    touchgfx::TextAreaWithTwoWildcards text_ph;
-    touchgfx::TextAreaWithTwoWildcards text_tds;
-    touchgfx::TextAreaWithTwoWildcards text_level;
+    touchgfx::TextAreaWithOneWildcard text_temperature;
+    touchgfx::TextAreaWithOneWildcard text_humidity;
+    touchgfx::TextAreaWithOneWildcard text_ph;
+    touchgfx::TextAreaWithOneWildcard text_tds;
+    touchgfx::TextAreaWithOneWildcard text_level;
     touchgfx::Button back_main_btn;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXT_TEMPERATUREBUFFER1_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_temperatureBuffer1[TEXT_TEMPERATUREBUFFER1_SIZE];
-    static const uint16_t TEXT_TEMPERATUREBUFFER2_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_temperatureBuffer2[TEXT_TEMPERATUREBUFFER2_SIZE];
-    static const uint16_t TEXT_HUMIDITYBUFFER1_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_humidityBuffer1[TEXT_HUMIDITYBUFFER1_SIZE];
-    static const uint16_t TEXT_HUMIDITYBUFFER2_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_humidityBuffer2[TEXT_HUMIDITYBUFFER2_SIZE];
-    static const uint16_t TEXT_PHBUFFER1_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_phBuffer1[TEXT_PHBUFFER1_SIZE];
-    static const uint16_t TEXT_PHBUFFER2_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_phBuffer2[TEXT_PHBUFFER2_SIZE];
-    static const uint16_t TEXT_TDSBUFFER1_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_tdsBuffer1[TEXT_TDSBUFFER1_SIZE];
-    static const uint16_t TEXT_TDSBUFFER2_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_tdsBuffer2[TEXT_TDSBUFFER2_SIZE];
-    static const uint16_t TEXT_LEVELBUFFER1_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_levelBuffer1[TEXT_LEVELBUFFER1_SIZE];
-    static const uint16_t TEXT_LEVELBUFFER2_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar text_levelBuffer2[TEXT_LEVELBUFFER2_SIZE];
+    static const uint16_t TEXT_TEMPERATURE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar text_temperatureBuffer[TEXT_TEMPERATURE_SIZE];
+    static const uint16_t TEXT_HUMIDITY_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar text_humidityBuffer[TEXT_HUMIDITY_SIZE];
+    static const uint16_t TEXT_PH_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar text_phBuffer[TEXT_PH_SIZE];
+    static const uint16_t TEXT_TDS_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar text_tdsBuffer[TEXT_TDS_SIZE];
+    static const uint16_t TEXT_LEVEL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar text_levelBuffer[TEXT_LEVEL_SIZE];
 
 private:
 

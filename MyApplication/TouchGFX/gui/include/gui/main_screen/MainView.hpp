@@ -16,8 +16,6 @@ protected:
     int tickCounter;
 
     void handleTickEvent();
-    virtual void sliderValueChanged(int value);
-    virtual void send_hello();
 
 };
 

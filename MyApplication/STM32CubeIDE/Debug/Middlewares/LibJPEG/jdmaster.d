@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jdmaster.o: \
- C:/test/4F-Fish_Farmer/MyApplication/Middlewares/Third_Party/LibJPEG/source/jdmaster.c \
+ C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/Middlewares/Third_Party/LibJPEG/source/jdmaster.c \
  ../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../LIBJPEG/Target/jconfig.h ../../LIBJPEG/Target/jdata_conf.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \

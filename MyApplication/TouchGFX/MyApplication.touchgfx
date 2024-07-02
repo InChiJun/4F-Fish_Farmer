@@ -263,9 +263,9 @@
           {
             "Type": "TextArea",
             "Name": "text_temperature",
-            "X": 140,
+            "X": 104,
             "Y": 85,
-            "Width": 50,
+            "Width": 122,
             "Height": 25,
             "TextId": "__SingleUse_MTPN",
             "TextRotation": "0",
@@ -277,20 +277,15 @@
             "Wildcard1": {
               "TextId": "__SingleUse_7798",
               "UseBuffer": true,
-              "BufferSize": 3
-            },
-            "Wildcard2": {
-              "TextId": "__SingleUse_IQT9",
-              "UseBuffer": true,
-              "BufferSize": 3
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
             "Name": "text_humidity",
-            "X": 290,
+            "X": 250,
             "Y": 85,
-            "Width": 50,
+            "Width": 126,
             "Height": 25,
             "TextId": "__SingleUse_D9RX",
             "TextRotation": "0",
@@ -302,20 +297,15 @@
             "Wildcard1": {
               "TextId": "__SingleUse_F69V",
               "UseBuffer": true,
-              "BufferSize": 3
-            },
-            "Wildcard2": {
-              "TextId": "__SingleUse_W9Z7",
-              "UseBuffer": true,
-              "BufferSize": 3
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
             "Name": "text_ph",
-            "X": 65,
+            "X": 29,
             "Y": 215,
-            "Width": 50,
+            "Width": 126,
             "Height": 25,
             "TextId": "__SingleUse_WQQ5",
             "TextRotation": "0",
@@ -327,20 +317,15 @@
             "Wildcard1": {
               "TextId": "__SingleUse_LXQ5",
               "UseBuffer": true,
-              "BufferSize": 3
-            },
-            "Wildcard2": {
-              "TextId": "__SingleUse_0F5D",
-              "UseBuffer": true,
-              "BufferSize": 3
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
             "Name": "text_tds",
-            "X": 215,
+            "X": 181,
             "Y": 215,
-            "Width": 50,
+            "Width": 120,
             "Height": 25,
             "TextId": "__SingleUse_EHW8",
             "TextRotation": "0",
@@ -352,20 +337,15 @@
             "Wildcard1": {
               "TextId": "__SingleUse_PYMH",
               "UseBuffer": true,
-              "BufferSize": 3
-            },
-            "Wildcard2": {
-              "TextId": "__SingleUse_K2TB",
-              "UseBuffer": true,
-              "BufferSize": 3
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
             "Name": "text_level",
-            "X": 366,
+            "X": 331,
             "Y": 215,
-            "Width": 50,
+            "Width": 119,
             "Height": 25,
             "TextId": "__SingleUse_I690",
             "TextRotation": "0",
@@ -377,12 +357,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_Z25Q",
               "UseBuffer": true,
-              "BufferSize": 3
-            },
-            "Wildcard2": {
-              "TextId": "__SingleUse_7RKY",
-              "UseBuffer": true,
-              "BufferSize": 3
+              "BufferSize": 10
             }
           },
           {
@@ -432,36 +407,6 @@
             "Pressed": "back50.png",
             "Released": "back50.png",
             "Alpha": 150
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "air_btn",
-            "X": 275,
-            "Y": 28,
-            "Width": 138,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_light.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_normal.png"
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "water_btn",
-            "X": 275,
-            "Y": 108,
-            "Width": 138,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_light.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_normal.png"
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "led_btn",
-            "X": 275,
-            "Y": 188,
-            "Width": 138,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_light.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_normal.png"
           },
           {
             "Type": "Image",
@@ -528,6 +473,39 @@
             "TextRotation": "0",
             "Alpha": 150,
             "AutoSize": true
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "air_button",
+            "X": 274,
+            "Y": 28,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "water_button",
+            "X": 274,
+            "Y": 105,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "led_button",
+            "X": 274,
+            "Y": 188,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
           }
         ],
         "Interactions": [
@@ -544,35 +522,36 @@
             }
           },
           {
-            "InteractionName": "air_motor",
+            "InteractionName": "Interaction1",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "air_btn"
-            },
-            "Action": {
-              "Type": "ActionExecuteCode"
-            }
-          },
-          {
-            "InteractionName": "water_motor",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "water_btn"
+              "TriggerComponent": "air_button"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "function2"
+              "FunctionName": "air_button_click"
             }
           },
           {
-            "InteractionName": "led",
+            "InteractionName": "Interaction2",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "led_btn"
+              "TriggerComponent": "water_button"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "function3"
+              "FunctionName": "water_button_click"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "led_button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "led_button_click"
             }
           }
         ]

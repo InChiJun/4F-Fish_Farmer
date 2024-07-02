@@ -16,9 +16,6 @@ public:
     }
 
     void tick();
-    void clicked_button_air();
-    void clicked_button_water();
-    void clicked_button_led();
     void send_blue_airoff();
     void send_blue_airon();
     void send_blue_wateroff();

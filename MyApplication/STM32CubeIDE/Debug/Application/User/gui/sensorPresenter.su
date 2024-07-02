@@ -1,6 +1,6 @@
 ../../TouchGFX/gui/include/gui/sensor_screen/sensorPresenter.hpp:28:13:sensorPresenter::~sensorPresenter()	0	static
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorPresenter.cpp:10:6:virtual void sensorPresenter::activate()	0	static
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorPresenter.cpp:10:6:virtual void sensorPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/sensor_screen/sensorPresenter.hpp:28:13:virtual sensorPresenter::~sensorPresenter()	8	static
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorPresenter.cpp:20:6:virtual void sensorPresenter::tick()	24	static
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorPresenter.cpp:20:6:virtual void sensorPresenter::tick()	32	static
 ../../TouchGFX/gui/include/gui/sensor_screen/sensorPresenter.hpp:28:13:virtual void* sensorPresenter::_ZThn4_N15sensorPresenterD1Ev()	0	static
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorPresenter.cpp:4:1:sensorPresenter::sensorPresenter(sensorView&)	0	static
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorPresenter.cpp:4:1:sensorPresenter::sensorPresenter(sensorView&)	0	static

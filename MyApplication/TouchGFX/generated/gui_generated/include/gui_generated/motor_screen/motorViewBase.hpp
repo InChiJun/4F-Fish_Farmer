@@ -10,8 +10,8 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/Button.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
 
 class motorViewBase : public touchgfx::View<motorPresenter>
 {
@@ -23,11 +23,15 @@ public:
     /*
      * Virtual Action Handlers
      */
-    virtual void function2()
+    virtual void air_button_click()
     {
         // Override and implement this function in motor
     }
-    virtual void function3()
+    virtual void water_button_click()
+    {
+        // Override and implement this function in motor
+    }
+    virtual void led_button_click()
     {
         // Override and implement this function in motor
     }
@@ -43,15 +47,15 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image background;
     touchgfx::Button back_main_btn;
-    touchgfx::ToggleButton air_btn;
-    touchgfx::ToggleButton water_btn;
-    touchgfx::ToggleButton led_btn;
     touchgfx::Image air_back;
     touchgfx::Image water_back;
     touchgfx::Image led_back;
     touchgfx::TextArea air_motor;
     touchgfx::TextArea led;
     touchgfx::TextArea water_motor;
+    touchgfx::ToggleButton air_button;
+    touchgfx::ToggleButton water_button;
+    touchgfx::ToggleButton led_button;
 
 private:
 

@@ -1,5 +1,5 @@
 Application/User/gui/motorView.o: \
- C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp \
+ C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp \
  ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/motor_screen/motorViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
@@ -88,10 +88,10 @@ Application/User/gui/motorView.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp
 ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/motor_screen/motorViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -181,7 +181,7 @@ Application/User/gui/motorView.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:

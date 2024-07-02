@@ -36,32 +36,17 @@
       <Text Id="__SingleUse_7798" Alignment="Left" TypographyId="T___SINGLEUSE_JOGG">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_IQT9" Alignment="Left" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">0</Translation>
-      </Text>
-      <Text Id="__SingleUse_7RKY" Alignment="Left" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">0</Translation>
-      </Text>
       <Text Id="__SingleUse_I690" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">&lt;d&gt;.&lt;d&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_K2TB" Alignment="Left" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">&lt;d&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_EHW8" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">&lt;d&gt;.&lt;d&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_0F5D" Alignment="Left" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">&lt;d&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_WQQ5" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">&lt;d&gt;.&lt;d&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_W9Z7" Alignment="Left" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">&lt;d&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_D9RX" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">&lt;d&gt;.&lt;d&gt;</Translation>
+        <Translation Language="GB">&lt;d&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_1AZS" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
         <Translation Language="GB">water level&#10;sensor</Translation>
@@ -82,7 +67,7 @@
         <Translation Language="GB">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_MTPN" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
-        <Translation Language="GB">&lt;d&gt;.&lt;d&gt;</Translation>
+        <Translation Language="GB">&lt;d&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_AMO2" Alignment="Center" TypographyId="T___SINGLEUSE_JOGG">
         <Translation Language="GB">sensor</Translation>
@@ -91,7 +76,7 @@
   </Texts>
   <Typographies>
     <Typography Id="labels" Font="NotoSans-Regular.ttf" Size="12" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="T___SINGLEUSE_JOGG" Font="verdana.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="T___SINGLEUSE_JOGG" Font="verdana.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=",.-" WildcardCharacterRanges="0-9" />
     <Typography Id="large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

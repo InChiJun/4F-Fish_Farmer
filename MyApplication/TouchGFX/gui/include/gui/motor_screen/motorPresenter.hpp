@@ -26,7 +26,9 @@ public:
     virtual void deactivate();
 
     virtual ~motorPresenter() {}
-    virtual void setstate(bool state);
+    virtual void air_setstate(bool state);
+    virtual void water_setstate(bool state);
+    virtual void led_setstate(bool state);
 private:
     motorPresenter();
 

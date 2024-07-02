@@ -731,12 +731,17 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 char rx_data[256];
 void Bluetooth_Receive_Callback(uint8_t* data, uint16_t size) {
-	if(bt.rx_buffer[0]=='\0'){
-		bt.rx_buffer[0]= bt.rx_buffer[8];
+
+	if(bt.rx_buffer[0]!= 'S'){
+		rx_data[0]=bt.rx_buffer[size];
+		strncpy(rx_data,(char*)bt.rx_buffer+1,9);
 	}
-	strncpy(rx_data,(char*)bt.rx_buffer,8);
-    //Bluetooth_write_data(&bt, data, size);
+	else
+		strncpy(rx_data,(char*)bt.rx_buffer,9);
+
 	memset(bt.rx_buffer,0,256);
+	bt.rx_index = 0;
+	HAL_UART_Receive_IT(bt.huart, (uint8_t *)&bt.rx_buffer[bt.rx_index], 1);
 }
 
 void Bluetooth_Transmit_Callback(void) {
@@ -755,7 +760,9 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-    if (huart->Instance == UART7) {
+    extern Bluetooth bt;
+
+    if (huart == bt.huart) {
         Bluetooth_handle_rx_interrupt(&bt);
     }
 }
@@ -768,37 +775,41 @@ void push_bt_button(void){
 	uint8_t data_[] = "Hello";
 	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
 	}
-	 osMutexRelease(bluMutexHandle);
+
 }
 
 void send_turnoff_air(void)
 {
+	osStatus_t mutex_status = osMutexAcquire(bluMutexHandle, osWaitForever);
+	if (mutex_status == osOK){
 	uint8_t data_[] = "M10000";
 	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
+	osMutexRelease(bluMutexHandle);
+	}
 }
 void send_turnon_air(void)
 {
-	uint8_t data_[] = "M10001";
+	uint8_t data_[] = "M10001\r\n";
 	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
 }
 void send_turnoff_water(void)
 {
-	uint8_t data_[] = "M20000";
+	uint8_t data_[] = "M20000\r\n";
 	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
 }
 void send_turnon_water(void)
 {
-	uint8_t data_[] = "M20001";
+	uint8_t data_[] = "M20001\r\n";
 	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
 }
 void send_turnoff_led(void)
 {
-	uint8_t data_[] = "M30000";
+	uint8_t data_[] = "M30000\r\n";
 	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
 }
 void send_turnon_led(void)
 {
-	uint8_t data_[] = "M30001";
+	uint8_t data_[] = "M30001\r\n";
 	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
 }
 /* USER CODE END 4 */

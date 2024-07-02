@@ -14,9 +14,7 @@ motorView::motorView()
 void motorView::setupScreen()
 {
     motorViewBase::setupScreen();
-    air_btn.setAction(airButtonCallback); // air_btn 클릭 이벤트 설정
-    water_btn.setAction(waterButtonCallback); // air_btn 클릭 이벤트 설정
-    led_btn.setAction(ledButtonCallback); // air_btn 클릭 이벤트 설정
+
 }
 
 void motorView::tearDownScreen()
@@ -24,22 +22,20 @@ void motorView::tearDownScreen()
     motorViewBase::tearDownScreen();
 }
 
-void motorView::airButtonClicked(const touchgfx::AbstractButton& button)
+void motorView::air_button_click()
 {
-    bool airOn = air_btn.getState(); // 토글 버튼 상태 가져오기
-    presenter->setstate(airOn);
-
-}
-void motorView::waterButtonClicked(const touchgfx::AbstractButton& button)
-{
-    bool waterOn = water_btn.getState(); // 토글 버튼 상태 가져오기
-    presenter->setstate(waterOn);
-
-}
-void motorView::ledButtonClicked(const touchgfx::AbstractButton& button)
-{
-    bool ledOn = led_btn.getState(); // 토글 버튼 상태 가져오기
-    presenter->setstate(ledOn);
-
+    bool airOn = air_button.getState(); // 토글 버튼 상태 가져오기
+    presenter->air_setstate(airOn);
 }
 
+void motorView::water_button_click()
+{
+    bool waterOn = water_button.getState(); // 토글 버튼 상태 가져오기
+    presenter->water_setstate(waterOn);
+}
+
+void motorView::led_button_click()
+{
+    bool ledOn = led_button.getState(); // 토글 버튼 상태 가져오기
+    presenter->led_setstate(ledOn);
+}

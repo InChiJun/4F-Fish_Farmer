@@ -8,14 +8,14 @@
 
 char ssid[] = "IOTB_24G";
 char pass[] = "kosta90009";
-char broker[] = "10.10.20.7";    // 열려 있는 포트의 IP 주소를 입력해야 함
-int port = 1883; // admin에서 설정한 port
+char broker[] = "10.10.20.7"; // 열려 있는 포트의 IP 주소를 입력해야 함
+int port = 1883;              // admin에서 설정한 port
 
-char p_topic1[] = "sensor/value/Sensor1"; 
-char p_topic2[] = "sensor/value/Sensor2"; 
-char p_topic3[] = "sensor/value/Sensor3"; 
-char p_topic4[] = "sensor/value/Sensor4"; 
-char p_topic5[] = "sensor/value/Sensor5"; 
+char p_topic1[] = "sensor/value/Sensor1";
+char p_topic2[] = "sensor/value/Sensor2";
+char p_topic3[] = "sensor/value/Sensor3";
+char p_topic4[] = "sensor/value/Sensor4";
+char p_topic5[] = "sensor/value/Sensor5";
 
 char p_topic6[] = "sensor/alarm/Sensor1";
 char p_topic7[] = "sensor/alarm/Sensor2";
@@ -32,7 +32,8 @@ Phsensor s3;
 TDS s4;
 SZH s5;
 
-void setup() {
+void setup()
+{
     Serial.begin(115200);
     s1.begin(30.0, 10.0);
     s2.begin();
@@ -52,8 +53,10 @@ void setup() {
     Serial.println("mqtt ok");
 }
 
-void loop() {
-    if (!mqttClient.connected()) {
+void loop()
+{
+    if (!mqttClient.connected())
+    {
         connectMQTT();
     }
     mqttClient.poll(); // 메시지 폴링 추가
@@ -62,16 +65,20 @@ void loop() {
     delay(3000); // 전체 데이터를 보내는 루프에 대한 지연 시간
 }
 
-void connectWiFi() {
-    while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
+void connectWiFi()
+{
+    while (WiFi.begin(ssid, pass) != WL_CONNECTED)
+    {
         Serial.print(".");
         delay(5000);
     }
     delay(1000);
 }
 
-void connectMQTT() {
-    while (!mqttClient.connect(broker, port)) {
+void connectMQTT()
+{
+    while (!mqttClient.connect(broker, port))
+    {
         Serial.print("MQTT connection failed: ");
         Serial.println(mqttClient.connectError());
         WiFi.disconnect();
@@ -83,7 +90,8 @@ void connectMQTT() {
     mqttClient.subscribe("example/temperature");
 }
 
-void sendDataToMQTT() {
+void sendDataToMQTT()
+{
     sendMQTTMessage(p_topic1, String(s1.getTemperature()));
     delay(1000);
     sendMQTTMessage(p_topic2, String(s2.getHumidity()));
@@ -94,45 +102,43 @@ void sendDataToMQTT() {
     delay(1000);
     sendMQTTMessage(p_topic5, String(s5.water_level()));
     delay(1000);
-
-    if(s1.check_alarm() != 0) {
-        sendMQTTMessage(p_topic6, String(s1.check_alarm()));
-        delay(1000);
-    }
-    if (s2.check_alarm_humidity() != 0) {
-        sendMQTTMessage(p_topic7, String(s2.check_alarm_humidity()));
-        delay(1000);
-    }
-    if (s3.check_Ph_alarm() != 0) {
-        sendMQTTMessage(p_topic8, String(s3.check_Ph_alarm()));
-        delay(1000);
-    }
-    if (s5.check_alarm() != 0) {
-        sendMQTTMessage(p_topic10, String(s5.check_alarm()));
-        delay(1000);
-    }
-    
+    sendMQTTMessage(p_topic6, String(s1.check_alarm()));
+    delay(1000);
+    sendMQTTMessage(p_topic7, String(s2.check_alarm_humidity()));
+    delay(1000);
+    sendMQTTMessage(p_topic8, String(s3.check_Ph_alarm()));
+    delay(1000);
+    sendMQTTMessage(p_topic10, String(s5.check_alarm()));
+    delay(1000);
 }
 
-void sendMQTTMessage(const char* topic, const String& payload) {
-    if (mqttClient.beginMessage(topic)) {
+void sendMQTTMessage(const char *topic, const String &payload)
+{
+    if (mqttClient.beginMessage(topic))
+    {
         mqttClient.print(payload);
-        if (mqttClient.endMessage()) {
+        if (mqttClient.endMessage())
+        {
             Serial.print("Message sent to topic ");
             Serial.print(topic);
             Serial.print(": ");
             Serial.println(payload);
-        } else {
+        }
+        else
+        {
             Serial.print("Error sending message to topic ");
             Serial.println(topic);
         }
-    } else {
+    }
+    else
+    {
         Serial.print("Error starting message for topic ");
         Serial.println(topic);
     }
 }
 
-void onMqttMessage(int messageSize) {
+void onMqttMessage(int messageSize)
+{
     // 메시지 처리 콜백
     Serial.print("Received a message with topic '");
     Serial.print(mqttClient.messageTopic());
@@ -142,7 +148,8 @@ void onMqttMessage(int messageSize) {
     // 메시지 내용을 읽어서 시리얼로 출력
     char payload[messageSize + 1]; // payload 크기 + null terminator
     int i = 0;
-    while (mqttClient.available()) {
+    while (mqttClient.available())
+    {
         payload[i++] = mqttClient.read();
     }
     payload[i] = '\0'; // null terminator 추가

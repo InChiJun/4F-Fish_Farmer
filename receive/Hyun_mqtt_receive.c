@@ -26,6 +26,8 @@ char p_topic9[] = "sensor/alarm/Sensor4";
 char p_topic10[] = "sensor/alarm/Sensor5";
 
 void *read_serial(void *arg);
+pthread_mutex_t serial_mutex = PTHREAD_MUTEX_INITIALIZER;
+
 void setup_serial_port();
 void publish_sensor_data(struct mosquitto *mosq, char *buffer);
 void on_connect(struct mosquitto *mosq, void *obj, int reason_code);
@@ -58,8 +60,8 @@ void publish_sensor_data(struct mosquitto *mosq, char *buffer)
 {
     char payload[256];
     snprintf(payload, sizeof(payload), "%s", buffer);
-
     int rc = mosquitto_publish(mosq, NULL, "example/temperature", strlen(payload), payload, 2, false);
+
     if (rc != MOSQ_ERR_SUCCESS)
     {
         fprintf(stderr, "Error publishing: %s\n", mosquitto_strerror(rc));
@@ -124,7 +126,7 @@ void *read_serial(void *arg)
             previous_time = time(NULL);
             buffer[ret] = '\0'; // Ensure null-terminated string
             publish_sensor_data(mosq, buffer);
-            printf("Received: %s\n", buffer);
+            printf("Publishing: %s\n", buffer);
             usleep(1000 * 50);
         }
     }
@@ -134,35 +136,49 @@ void *read_serial(void *arg)
     pthread_exit(NULL);
 }
 
-void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_message *message) {
+void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_message *message)
+{
     printf("Topic: %s ", message->topic);
     printf("Received message: %s\n", (char *)message->payload);
     char buffer[256];
     int ret;
 
-    if (strcmp(message->topic, p_topic1) == 0) {
+    if (strcmp(message->topic, p_topic1) == 0)
+    {
         snprintf(buffer, sizeof(buffer), "S1%s\r\n", (char *)message->payload);
-        ret = write(serial_fd, buffer, strlen(buffer));
-    } else if (strcmp(message->topic, p_topic2) == 0) {
+    }
+    else if (strcmp(message->topic, p_topic2) == 0)
+    {
         snprintf(buffer, sizeof(buffer), "S2%s\r\n", (char *)message->payload);
-        ret = write(serial_fd, buffer, strlen(buffer));
-    } else if (strcmp(message->topic, p_topic3) == 0) {
+    }
+    else if (strcmp(message->topic, p_topic3) == 0)
+    {
         snprintf(buffer, sizeof(buffer), "S3%s\r\n", (char *)message->payload);
-        ret = write(serial_fd, buffer, strlen(buffer));
-    } else if (strcmp(message->topic, p_topic4) == 0) {
+    }
+    else if (strcmp(message->topic, p_topic4) == 0)
+    {
         snprintf(buffer, sizeof(buffer), "S4%s\r\n", (char *)message->payload);
-        ret = write(serial_fd, buffer, strlen(buffer));
-    } else if (strcmp(message->topic, p_topic5) == 0) {
+    }
+    else if (strcmp(message->topic, p_topic5) == 0)
+    {
         snprintf(buffer, sizeof(buffer), "S5%s\r\n", (char *)message->payload);
-        ret = write(serial_fd, buffer, strlen(buffer));
-    } else {
+    }
+    else
+    {
         snprintf(buffer, sizeof(buffer), "%s\r\n", (char *)message->payload);
-        ret = write(serial_fd, buffer, strlen(buffer));
     }
 
-    if (ret < 0) {
+    // 시리얼 포트 쓰기 동기화
+    pthread_mutex_lock(&serial_mutex);
+    ret = write(serial_fd, buffer, strlen(buffer));
+    pthread_mutex_unlock(&serial_mutex);
+
+    if (ret < 0)
+    {
         perror("Error writing to serial port");
-    } else {
+    }
+    else
+    {
         printf("Written to serial port: %s\n", buffer);
     }
 }
@@ -170,13 +186,6 @@ void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_m
 int main()
 {
     setup_serial_port();
-
-    pthread_t serial_thread;
-    if (pthread_create(&serial_thread, NULL, read_serial, NULL))
-    {
-        fprintf(stderr, "Error creating thread\n");
-        return 1;
-    }
 
     struct mosquitto *mosq = NULL;
     mosquitto_lib_init();
@@ -205,6 +214,31 @@ int main()
         fprintf(stderr, "Error: Could not subscribe to topic.\n");
         mosquitto_destroy(mosq);
         mosquitto_lib_cleanup();
+        return 1;
+    }
+
+    write(serial_fd, "AT+DISC?\r\n", 10);
+    usleep(5000 * 1000);
+    char buffer[256] = {0};
+    int ret = read(serial_fd, buffer, sizeof(buffer) - 1); // Reserve space for null-terminator
+    if ((ret > 0) )
+    {
+        buffer[ret] = '\0'; // Ensure null-terminated string
+        printf("Publishing: %s\n", buffer);
+        usleep(1000 * 50);
+    }
+    int num;
+    scanf("%d", &num);
+    if (num == 0)
+    {
+        write(serial_fd, "AT+CONN0\r\n", 10);
+        usleep(1000 * 1000);
+    }
+
+    pthread_t serial_thread;
+    if (pthread_create(&serial_thread, NULL, read_serial, NULL))
+    {
+        fprintf(stderr, "Error creating thread\n");
         return 1;
     }
 

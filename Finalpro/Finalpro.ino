@@ -94,6 +94,24 @@ void sendDataToMQTT() {
     delay(1000);
     sendMQTTMessage(p_topic5, String(s5.water_level()));
     delay(1000);
+
+    if(s1.check_alarm() != 0) {
+        sendMQTTMessage(p_topic6, String(s1.check_alarm()));
+        delay(1000);
+    }
+    if (s2.check_alarm_humidity() != 0) {
+        sendMQTTMessage(p_topic7, String(s2.check_alarm_humidity()));
+        delay(1000);
+    }
+    if (s3.check_Ph_alarm() != 0) {
+        sendMQTTMessage(p_topic8, String(s3.check_Ph_alarm()));
+        delay(1000);
+    }
+    if (s5.check_alarm() != 0) {
+        sendMQTTMessage(p_topic10, String(s5.check_alarm()));
+        delay(1000);
+    }
+    
 }
 
 void sendMQTTMessage(const char* topic, const String& payload) {

@@ -1,36 +1,22 @@
 #include "motor.h"
 
-void Motor::power_on() {
-    power_status = true;
+void motor::begin(){
+    pinMode(motorA1, OUTPUT);
+    pinMode(motorA2, OUTPUT);
 }
 
-void Motor::power_off() {
-    power_status = false;
+void motor::water_fill(){
+    digitalWrite(motorA1, HIGH);
+    digitalWrite(motorA2, LOW);
 }
 
-bool Motor::get_power() const {
-    return power_status;
+void motor::water_drain(){
+    digitalWrite(motorA1, LOW);
+    digitalWrite(motorA2, HIGH);
 }
 
-uint8_t Motor::get_pwm() const {
-    return pwm;
+void motor::stop(){
+    digitalWrite(motorA1, LOW);
+    digitalWrite(motorA2, LOW);
 }
 
-void Motor::up_pwm() {
-    if (pwm < 255) {
-        ++pwm;
-    }
-}
-
-void Motor::down_pwm() {
-    if (pwm > 0) {
-        --pwm;
-    }
-}
-
-void Motor::set_pin(uint8_t pin1, uint8_t pin2) {
-    pinMode(pin1, OUTPUT);
-    pinMode(pin2, OUTPUT);
-    digitalWrite(pin1, LOW);
-    digitalWrite(pin2, LOW);
-}

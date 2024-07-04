@@ -1,7 +1,7 @@
 #include "fan.h"
 
 void fan::begin(){
-    power_status = true;
+    power_status = false;
     set_pin(11, 10);
     digitalWrite(11,power_status);
 }

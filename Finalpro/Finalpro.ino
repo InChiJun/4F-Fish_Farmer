@@ -46,9 +46,9 @@ void setup()
     s3.begin();
     s4.begin();
     s5.begin();
-    // myfan.begin();
-    // mymotor.begin();
-    // myheater.begin();
+    myfan.begin();
+    mymotor.begin();
+    myheater.begin();
 
     s1.set_alarm_temp(30.0, 10.0);
     s2.set_alarm_humidity(80.0, 20.0);

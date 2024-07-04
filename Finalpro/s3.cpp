@@ -51,7 +51,7 @@ void Phsensor::set_Ph_alarm(float low_ph, float high_ph)
     this->high_ph = high_ph;
 }
 
-uint8_t Phsensor::get_alarm()
+uint8_t Phsensor::check_Ph_alarm()
 {
     if (this->ph > this->high_ph)
     {

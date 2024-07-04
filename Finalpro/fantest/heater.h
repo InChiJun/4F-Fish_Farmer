@@ -13,7 +13,7 @@ public:
     bool power_status;
 private:
     uint8_t control_pin1;
-    uint8_t control_pin2;
+    uint8_t control_pin2; 
 };
 
 #endif

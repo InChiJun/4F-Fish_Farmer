@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-#include "heater.h"
-
-heater h;
-
-void setup() {
-    h.begin();
-}
-
-void loop() {
-    h.power_on();
-}
-=======
 #include "WiFi.h"
 #include "ArduinoMqttClient.h"
 #include "fan.h"
@@ -34,7 +21,7 @@ void setup() {
 
     myfan.begin();
     mymotor.begin();
-    myheater.begin();
+    myheater.begin(A2);
     connectWiFi();
     connectMQTT();
 
@@ -112,4 +99,3 @@ void control(const char* payload) {
         }
     }
 }
->>>>>>> 3a494d0506ac3acf0d22150425abecd05348b156

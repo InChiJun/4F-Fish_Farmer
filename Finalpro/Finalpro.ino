@@ -163,32 +163,50 @@ void onMqttMessage(int messageSize)
         payload[i++] = mqttClient.read();
     }
     payload[i] = '\0'; // null terminator 추가
-
-
-
+    Serial.print("Payload: ");
+    Serial.println(payload);
     control(payload);
 }
 
-void control(const char* payload) {
-    if (payload[1] == '1') {
-        if (payload[5] == '1') {
+void control(const char *payload)
+{
+    if (payload[1] == '1')
+    {
+        if (payload[5] == '1')
+        {
             myfan.power_on();
-            Serial.print("Payload: ");
-    Serial.println(payload);
-        } else if (payload[5] == '0') {
+            Serial.println(myfan.get_power());
+        }
+        else if (payload[5] == '0')
+        {
             myfan.power_off();
+            Serial.println(myfan.get_power());
         }
-    } else if (payload[1] == '2') {
-        if (payload[5] == '1') {
-            mymotor.water_fill();
-        } else if (payload[5] == '0') {
-            mymotor.stop();
+    }
+    else if (payload[1] == '2')
+    {
+        if (payload[5] == '1')
+        {
+            mymotor.power_on();
+            Serial.println(mymotor.get_power());
         }
-    } else if (payload[1] == '3') {
-        if (payload[5] == '1') {
+        else if (payload[5] == '0')
+        {
+            mymotor.power_off();
+            Serial.println(mymotor.get_power());
+        }
+    }
+    else if (payload[1] == '3')
+    {
+        if (payload[5] == '1')
+        {
             myheater.power_on();
-        } else if (payload[5] == '0') {
+            Serial.println(myheater.get_power());
+        }
+        else if (payload[5] == '0')
+        {
             myheater.power_off();
+            Serial.println(myheater.get_power());
         }
     }
 }

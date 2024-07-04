@@ -11,7 +11,6 @@ public:
     bool get_power() const;
     void set_pin(uint8_t pin11, uint8_t pin10);
 private:
-
     bool power_status = true;
 };
 

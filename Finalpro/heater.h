@@ -5,14 +5,15 @@
 
 class heater {
 public:
-    void begin(uint8_t signalPin); // 수정: 신호 핀을 인자로 받음
-    void control();
+    void begin();
     void power_on();
     void power_off();
     bool get_power() const;
-private:
+    void set_pin(uint8_t pin1, uint8_t pin2);
     bool power_status;
-    uint8_t signal_pin; // 추가: 신호 핀
+private:
+    uint8_t control_pin1;
+    uint8_t control_pin2; 
 };
 
 #endif

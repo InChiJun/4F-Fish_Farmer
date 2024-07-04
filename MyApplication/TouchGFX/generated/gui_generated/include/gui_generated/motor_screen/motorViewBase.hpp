@@ -51,8 +51,8 @@ protected:
     touchgfx::Image water_back;
     touchgfx::Image led_back;
     touchgfx::TextArea air_motor;
+    touchgfx::TextArea heater;
     touchgfx::TextArea led;
-    touchgfx::TextArea water_motor;
     touchgfx::ToggleButton air_button;
     touchgfx::ToggleButton water_button;
     touchgfx::ToggleButton led_button;

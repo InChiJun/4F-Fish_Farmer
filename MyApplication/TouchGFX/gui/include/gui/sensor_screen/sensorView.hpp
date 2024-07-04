@@ -16,6 +16,11 @@ public:
     void s3_update_text(const char* data, uint16_t size);
     void s4_update_text(const char* data, uint16_t size);
     void s5_update_text(const char* data, uint16_t size);
+    void s1_set_color(const char* data);
+    void s2_set_color(const char* data);
+    void s3_set_color(const char* data);
+    void s5_set_color(const char* data);
+
 protected:
     int tickCounter;
 

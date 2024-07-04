@@ -732,7 +732,7 @@ static void MX_GPIO_Init(void)
 char rx_data[256];
 void Bluetooth_Receive_Callback(uint8_t* data, uint16_t size) {
 
-	if(bt.rx_buffer[0]!= 'S'){
+	if(bt.rx_buffer[0]== '\0'|| (bt.rx_buffer[0]&&bt.rx_buffer[1]=='S')){
 		rx_data[0]=bt.rx_buffer[size];
 		strncpy(rx_data,(char*)bt.rx_buffer+1,9);
 	}
@@ -780,12 +780,8 @@ void push_bt_button(void){
 
 void send_turnoff_air(void)
 {
-	osStatus_t mutex_status = osMutexAcquire(bluMutexHandle, osWaitForever);
-	if (mutex_status == osOK){
-	uint8_t data_[] = "M10000";
+	uint8_t data_[] = "M10000\r\n";
 	Bluetooth_write_data(&bt, data_, sizeof(data_)+1);
-	osMutexRelease(bluMutexHandle);
-	}
 }
 void send_turnon_air(void)
 {

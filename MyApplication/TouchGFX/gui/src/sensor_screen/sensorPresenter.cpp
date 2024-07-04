@@ -70,4 +70,25 @@ void sensorPresenter::tick()
 		}
 			view.s5_update_text(change_data, i);
 		}
+	else if(strncmp(rx_data,"A1",2)==0){
+		char change_data[1];
+		change_data[0] = rx_data[2];
+		view.s1_set_color(change_data);
+		}
+	else if(strncmp(rx_data,"A2",2)==0){
+		char change_data[1];
+		change_data[0] = rx_data[2];
+		view.s2_set_color(change_data);
+		}
+	else if(strncmp(rx_data,"A3",2)==0){
+		char change_data[1];
+		change_data[0] = rx_data[2];
+		view.s3_set_color(change_data);
+		}
+	else if(strncmp(rx_data,"A5",2)==0){
+		char change_data[1];
+		change_data[0] = rx_data[2];
+		view.s5_set_color(change_data);
+		}
+	else return;
 }

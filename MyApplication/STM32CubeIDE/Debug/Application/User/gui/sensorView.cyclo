@@ -1,13 +1,17 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:13:6:virtual void sensorView::handleTickEvent()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:18:6:virtual void sensorView::tearDownScreen()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:16:6:virtual void sensorView::handleTickEvent()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:21:6:virtual void sensorView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/sensor_screen/sensorView.hpp:11:13:sensorView::~sensorView()	1
 ../../TouchGFX/gui/include/gui/sensor_screen/sensorView.hpp:11:13:virtual sensorView::~sensorView()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:3:1:sensorView::sensorView()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:8:6:virtual void sensorView::setupScreen()	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:23:6:void sensorView::s1_update_text(const char*, uint16_t)	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:30:6:void sensorView::s2_update_text(const char*, uint16_t)	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:37:6:void sensorView::s3_update_text(const char*, uint16_t)	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:44:6:void sensorView::s4_update_text(const char*, uint16_t)	1
-C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:51:6:void sensorView::s5_update_text(const char*, uint16_t)	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:6:1:sensorView::sensorView()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:11:6:virtual void sensorView::setupScreen()	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:26:6:void sensorView::s1_update_text(const char*, uint16_t)	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:33:6:void sensorView::s2_update_text(const char*, uint16_t)	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:41:6:void sensorView::s3_update_text(const char*, uint16_t)	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:48:6:void sensorView::s4_update_text(const char*, uint16_t)	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:55:6:void sensorView::s5_update_text(const char*, uint16_t)	1
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:62:6:void sensorView::s1_set_color(const char*)	3
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:76:6:void sensorView::s2_set_color(const char*)	3
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:90:6:void sensorView::s3_set_color(const char*)	3
+C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/sensor_screen/sensorView.cpp:104:6:void sensorView::s5_set_color(const char*)	3

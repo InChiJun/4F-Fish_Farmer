@@ -1,5 +1,5 @@
 Application/User/gui/motorView.o: \
- C:/test/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp \
+ C:/TouchGFXProjects/test3/4F-Fish_Farmer/MyApplication/TouchGFX/gui/src/motor_screen/motorView.cpp \
  ../../TouchGFX/gui/include/gui/motor_screen/motorView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/motor_screen/motorViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

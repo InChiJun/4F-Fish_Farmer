@@ -45,19 +45,19 @@ motorViewBase::motorViewBase() :
     air_motor.setAlpha(150);
     add(air_motor);
 
-    led.setXY(138, 202);
+    heater.setXY(121, 202);
+    heater.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    heater.setLinespacing(0);
+    heater.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3XZ2));
+    heater.setAlpha(150);
+    add(heater);
+
+    led.setXY(137, 122);
     led.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     led.setLinespacing(0);
-    led.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3XZ2));
+    led.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CHE4));
     led.setAlpha(150);
     add(led);
-
-    water_motor.setXY(94, 121);
-    water_motor.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    water_motor.setLinespacing(0);
-    water_motor.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CHE4));
-    water_motor.setAlpha(150);
-    add(water_motor);
 
     air_button.setXY(274, 28);
     air_button.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID));

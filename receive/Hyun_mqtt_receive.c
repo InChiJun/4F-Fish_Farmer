@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include <pthread.h>
 #include <time.h>
+#include <mariadb/mysql.h>
 
 #define SERIAL_PORT "/dev/ttyUSB0"
 #define BAUD_RATE B9600
@@ -142,6 +143,30 @@ void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_m
     printf("Received message: %s\n", (char *)message->payload);
     char buffer[256];
     int ret;
+
+    // DB 초기화
+    MYSQL *conn;
+    conn = mysql_init(NULL);
+
+    // 데이터베이스 초기화 오류시
+    if (conn == NULL) 
+    {
+        fprintf(stderr, "Error: mysql_init() failed\n");
+    }
+
+    // 데이터베이스 연결
+    if (mysql_real_connect(conn, "localhost", "root", "ubuntu", "4FSensor", 1883, NULL, 0) == NULL)
+    {
+        fprintf(stderr, "Error: mysql_real_connect() failed\n"); // 연결 오류시 출력
+        mysql_close(conn);
+    }
+
+    // 현재시간 받아오는 코드
+    time_t previous_time=time(NULL);
+    previous_time=time(NULL);
+    char date[20];
+    time_t now = time(NULL);
+    strftime(date, 20, "%Y-%m-%d %H:%M", localtime(&now));
 
     if (strcmp(message->topic, p_topic1) == 0)
     {

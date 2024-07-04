@@ -13,7 +13,11 @@ public:
     bool power_status;
 private:
     uint8_t control_pin1;
+<<<<<<< HEAD
     uint8_t control_pin2; 
+=======
+    uint8_t control_pin2;
+>>>>>>> 3a494d0506ac3acf0d22150425abecd05348b156
 };
 
 #endif

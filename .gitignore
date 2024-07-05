@@ -3,3 +3,4 @@
 mqtt_receiver
 build/
 .vscode/
+*run

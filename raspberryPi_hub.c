@@ -78,7 +78,7 @@ void on_connect(struct mosquitto *mosq, void *obj, int reason_code)
     }
 }
 
-void on_publish(struct mosquitto *mosq, void *obj, int mid)
+void on_publish(struct mosquitto *mosq, void *obj, int mid) // 삭제 가능 여부 확인
 {
     printf("Message with mid %d has been published.\n", mid);
 }
@@ -144,7 +144,7 @@ void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_m
     char buffer[256];
     int ret;
 
-    // DB 초기화(디비 코드 메인으로)
+    // DB 초기화
     MYSQL *db_conn;
     db_conn = mysql_init(NULL);
 

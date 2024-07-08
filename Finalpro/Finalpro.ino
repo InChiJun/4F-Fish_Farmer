@@ -79,7 +79,6 @@ void loop()
 
     sendDataToMQTT();
     delay(3000); // 전체 데이터를 보내는 루프에 대한 지연 시간
-    float humidity = s2.getHumidity();
 }
 
 void connectWiFi()

@@ -26,12 +26,11 @@ char p_topic8[] = "sensor/alarm/Sensor3";
 char p_topic9[] = "sensor/alarm/Sensor4";
 char p_topic10[] = "sensor/alarm/Sensor5";
 
-MYSQL *db_conn; // DB 변수
-
 void *read_serial(void *arg);
 pthread_mutex_t serial_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 void setup_serial_port();
+MYSQL *db_conn; // DB 변수
 void publish_sensor_data(struct mosquitto *mosq, char *buffer);
 void on_connect(struct mosquitto *mosq, void *obj, int reason_code);
 void on_publish(struct mosquitto *mosq, void *obj, int mid);
@@ -233,13 +232,10 @@ int main()
     }
 
     // 데이터베이스 연결
-    while(mysql_real_connect(db_conn, "localhost", "root", "ubuntu", "4FSensor", 1883, NULL, 0) == NULL){
-        fprintf(stderr, "Error: mysql_real_connect() failed\n");
+    if (mysql_real_connect(db_conn, "localhost", "root", "ubuntu", "4FSensor", 1883, NULL, 0) == NULL){
+        fprintf(stderr, "Error: mysql_real_connect() failed\n"); // 연결 오류시 출력
+        // mysql_close(db_conn);
     }
-    // if (mysql_real_connect(db_conn, "localhost", "root", "ubuntu", "4FSensor", 1883, NULL, 0) == NULL){
-    //     fprintf(stderr, "Error: mysql_real_connect() failed\n"); // 연결 오류시 출력
-    //     // mysql_close(db_conn);
-    // }
 
     struct mosquitto *mosq = NULL;
     mosquitto_lib_init();

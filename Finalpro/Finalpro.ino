@@ -54,6 +54,8 @@ void setup()
     s5.begin();
     myfan.begin();
     myheater.begin();
+    strip.setBrightness(100);
+    strip.begin();
 
     s1.set_alarm_temp(30.0, 10.0);
     s2.set_alarm_humidity(80.0, 20.0);
@@ -193,11 +195,21 @@ void control(const char *payload)
         if (payload[5] == '1')
         {
             strip.Color(255,255,255); 
+            for(int i =0 ; i<10 ; i++)
+            {
+                strip.setPixelColor(i, 255,255,255);
+                strip.show();
+            }
             strip.show();
         }
         else if (payload[5] == '0')
         {
             strip.Color(0,0,0);
+            for(int i =0 ; i<10 ; i++)
+            {
+                strip.setPixelColor(i, 0,0,0);
+                strip.show();
+            }            
             strip.show();
         }
     }

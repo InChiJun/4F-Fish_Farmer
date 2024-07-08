@@ -23,7 +23,7 @@ float TDS::readTDS(float temperature) {
     float compensationVoltage = averageVoltage / compensationCoefficient;
     float tdsValue = (133.42 * compensationVoltage * compensationVoltage * compensationVoltage
                     - 255.86 * compensationVoltage * compensationVoltage
-                    + 857.39 * compensationVoltage) * 0.5;
+                    + 857.39 * compensationVoltage) * 0.05;
 
     return tdsValue;
 }

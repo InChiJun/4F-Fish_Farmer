@@ -1,5 +1,6 @@
 {
     "board": "arduino:renesas_uno:unor4wifi",
     "port": "/dev/ttyACM0",
-    "sketch": "Finalpro/Finalpro.ino"
+    "programmer": "cmsis-dap",
+    "sketch": "Finalpro/workingcode/heater/heater.ino"
 }

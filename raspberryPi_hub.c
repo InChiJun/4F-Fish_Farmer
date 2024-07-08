@@ -197,6 +197,22 @@ void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_m
         sprintf(query, "INSERT INTO waterLevel (`collect_time`,`waterLevel_value`) VALUES ('%s','%s')", date, (char *)message->payload);
         mysql_query(db_conn, query);
     }
+    else if (strcmp(message->topic, p_topic6) == 0)
+    {
+        snprintf(buffer, sizeof(buffer), "A1%s\r\n", (char *)message->payload);
+    }
+    else if (strcmp(message->topic, p_topic7) == 0)
+    {
+        snprintf(buffer, sizeof(buffer), "A2%s\r\n", (char *)message->payload);
+    }
+    else if (strcmp(message->topic, p_topic8) == 0)
+    {
+        snprintf(buffer, sizeof(buffer), "A3%s\r\n", (char *)message->payload);
+    }
+    else if (strcmp(message->topic, p_topic10) == 0)
+    {
+        snprintf(buffer, sizeof(buffer), "A5%s\r\n", (char *)message->payload);
+    }
     else
     {
         snprintf(buffer, sizeof(buffer), "%s\r\n", (char *)message->payload);

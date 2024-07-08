@@ -9,6 +9,11 @@
 #include "motor.h"
 #include "heater.h"
 
+#include <Adafruit_NeoPixel.h>
+#define PIN 3
+#define N_LEDS 8
+
+
 char ssid[] = "IOTB_24G";
 char pass[] = "kosta90009";
 char broker[] = "10.10.20.7"; // 열려 있는 포트의 IP 주소를 입력해야 함
@@ -29,15 +34,16 @@ char p_topic10[] = "sensor/alarm/Sensor5";
 WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
 
+
+
 Thermal s1;
 AHT20 s2;
 Phsensor s3;
 TDS s4;
 SZH s5;
 fan myfan;
-motor mymotor;
 heater myheater;
-
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(N_LEDS, PIN, NEO_GRB + NEO_KHZ800);
 void setup()
 {
     Serial.begin(115200);
@@ -47,7 +53,6 @@ void setup()
     s4.begin();
     s5.begin();
     myfan.begin();
-    mymotor.begin();
     myheater.begin();
 
     s1.set_alarm_temp(30.0, 10.0);
@@ -187,13 +192,13 @@ void control(const char *payload)
     {
         if (payload[5] == '1')
         {
-            mymotor.power_on();
-            Serial.println(mymotor.get_power());
+            strip.Color(255,255,255); 
+            strip.show();
         }
         else if (payload[5] == '0')
         {
-            mymotor.power_off();
-            Serial.println(mymotor.get_power());
+            strip.Color(0,0,0);
+            strip.show();
         }
     }
     else if (payload[1] == '3')

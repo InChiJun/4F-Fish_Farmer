@@ -199,7 +199,7 @@ void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_m
     }
     else
     {
-        snprintf(buffer, sizeof(buffer), "%s\r\n", (char *)message->payload);
+        snprintf(buffer, sizeof(buffer), "A%s\r\n", (char *)message->payload);
     }
 
     // 시리얼 포트 쓰기 동기화

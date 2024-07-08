@@ -156,7 +156,7 @@ void on_message(struct mosquitto *mosq, void *userdata, const struct mosquitto_m
     // 데이터베이스 연결
     if (mysql_real_connect(db_conn, "localhost", "root", "ubuntu", "4FSensor", 1883, NULL, 0) == NULL){
         fprintf(stderr, "Error: mysql_real_connect() failed\n"); // 연결 오류시 출력
-        mysql_close(db_conn);
+        // mysql_close(db_conn);
     }
 
     // 현재시간 받아오는 코드
